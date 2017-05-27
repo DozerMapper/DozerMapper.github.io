@@ -1,0 +1,13 @@
+gems:
+- jekyll-asciidoc
+- slim
+- thread_safe
+asciidoc:
+  processor: asciidoctor
+  ext: adoc
+  attributes:
+    - idprefix=_
+    - source-highlighter=pygments
+    - pygments-css=style
+title: Dozer
+description: Dozer is a Java Bean to Java Bean mapper that recursively copies data from one object to another.

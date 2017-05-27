@@ -1,0 +1,30 @@
+# Eclipse #
+###########
+.classpath
+.project
+.settings
+*/bin
+
+# Maven #
+#########
+target
+release.properties
+*.releaseBackup
+*.versionsBackup
+
+# IntelliJ IDEA #
+#################
+.idea
+*.iml
+*.ipr
+*.iws
+
+# OS X #
+########
+.DS_Store
+
+# Jekyll #
+##########
+_site/.sass-cache
+_site/asciidoc/.jekyll-metadata
+_site/gh-pages

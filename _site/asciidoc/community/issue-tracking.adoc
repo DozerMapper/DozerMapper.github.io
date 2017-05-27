@@ -1,0 +1,13 @@
+---
+layout: default
+permalink: /community/issue-tracking
+---
+
+== Issue Management
+Issues, bugs, and feature requests should be submitted to the following
+issue management system for this project.
+
+[source,prettyprint]
+----
+https://github.com/DozerMapper/dozer/issues
+----

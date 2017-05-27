@@ -1,0 +1,21 @@
+---
+layout: default
+permalink: /
+---
+
+ifdef::env-github,env-browser[:outfilesuffix: .adoc]
+
+== News
+.. link:news/news{outfilesuffix}[News]
+... link:news/archived-news{outfilesuffix}[Archived News]
+
+== Community
+.. link:community/articles{outfilesuffix}[Articles]
+.. link:community/support{outfilesuffix}[Support]
+.. link:community/team-list{outfilesuffix}[Team List]
+.. link:community/issue-tracking{outfilesuffix}[Issue Tracking]
+.. link:community/source-repository{outfilesuffix}[Source Repository]
+
+== Release Notes
+.. link:releasenotes/releasenotes{outfilesuffix}[Release Notes]
+... link:releasenotes/archived-releasenotes{outfilesuffix}[Archived Release Notes]
