@@ -1,0 +1,997 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Global Configuration · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mappingclasses.html" />
+    
+    
+    <link rel="prev" href="advancedConfiguration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="whymap.html">
+            
+                <a href="whymap.html">
+            
+                    
+                    Why Map?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gettingstarted.html">
+            
+                <a href="gettingstarted.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    Mappings via XML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    via Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="apimappings.html">
+            
+                <a href="apimappings.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+            
+                <a href="advancedConfiguration.html">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.2" data-path="globalConfiguration.html">
+            
+                <a href="globalConfiguration.html">
+            
+                    
+                    Global Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dozer mapping concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="mappingclasses.html">
+            
+                <a href="mappingclasses.html">
+            
+                    
+                    Mapping Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="simpleproperty.html">
+            
+                <a href="simpleproperty.html">
+            
+                    
+                    Basic Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="baseattributes.html">
+            
+                <a href="baseattributes.html">
+            
+                    
+                    Inheritance Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="contextmapping.html">
+            
+                <a href="contextmapping.html">
+            
+                    
+                    Context Based Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="oneway.html">
+            
+                <a href="oneway.html">
+            
+                    
+                    One-Way Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="copybyreference.html">
+            
+                <a href="copybyreference.html">
+            
+                    
+                    Copying By Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="deepmapping.html">
+            
+                <a href="deepmapping.html">
+            
+                    
+                    Deep Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="indexmapping.html">
+            
+                <a href="indexmapping.html">
+            
+                    
+                    Indexed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="exclude.html">
+            
+                <a href="exclude.html">
+            
+                    
+                    Excluding Fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="advancedproperty.html">
+            
+                <a href="advancedproperty.html">
+            
+                    
+                    Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How do i map a type of…​?</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="stringtodatemapping.html">
+            
+                <a href="stringtodatemapping.html">
+            
+                    
+                    String to Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="collectionandarraymapping.html">
+            
+                <a href="collectionandarraymapping.html">
+            
+                    
+                    Collections and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="mapbackedproperty.html">
+            
+                <a href="mapbackedproperty.html">
+            
+                    
+                    Map Backed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="proxyhandling.html">
+            
+                <a href="proxyhandling.html">
+            
+                    
+                    Proxy Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">What if i need to customise the mapping?</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="customconverter.html">
+            
+                <a href="customconverter.html">
+            
+                    
+                    Custom Converters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="custombeanfactories.html">
+            
+                <a href="custombeanfactories.html">
+            
+                    
+                    Custom Bean Factories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="customCreateMethod.html">
+            
+                <a href="customCreateMethod.html">
+            
+                    
+                    Custom Create Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="custommethods.html">
+            
+                <a href="custommethods.html">
+            
+                    
+                    Custom get() set() Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="expressionlanguage.html">
+            
+                <a href="expressionlanguage.html">
+            
+                    
+                    Expression Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extra</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="configuration/logging.html">
+            
+                <a href="configuration/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="events.html">
+            
+                <a href="events.html">
+            
+                    
+                    Event Listening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
+            
+                <a href="configuration/statistics.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
+            
+                <a href="jmxintegration.html">
+            
+                    
+                    JMX Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    Metadata Query Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3rd Party</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="springintegration.html">
+            
+                <a href="springintegration.html">
+            
+                    
+                    Spring Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+            
+                <a href="xmlbeans.html">
+            
+                    
+                    JAXB and XMLBeans
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Schema</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    schema/beanmapping.xsd[Dozer Mapping XSD]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                    dozer-user-guide.pdf[User’s Guide PDF]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eclipse Plugin</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+            
+                <a href="eclipse-plugin/installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+            
+                <a href="eclipse-plugin/usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+            
+                <a href="eclipse-plugin/usage-xml.html">
+            
+                    
+                    via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+            
+                <a href="eclipse-plugin/usage-editor.html">
+            
+                    
+                    via Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Global Configuration</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="sect1">
+<h2 id="_global_configuration">Global Configuration</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The configuration block is used to set the global default settings.
+Also, any Custom Converters are defined in this section. The
+configuration block is entirely &quot;optional&quot;.</p>
+</div>
+<div class="paragraph">
+<p>Dozer supports the ability to have multiple mapping files, but only one
+global configuration across the multiple mapping files. We recommend
+having a separate mapping xml file for specifying the single global
+configuration. <strong>Implicit mappings will inherit the default values for
+configuration.</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is the sample configuration block:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">date-format</span>&gt;</span>MM/dd/yyyy HH:mm<span class="hljs-tag">&lt;/<span class="hljs-name">date-format</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stop-on-errors</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">stop-on-errors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">trim-strings</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">trim-strings</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestCustomConverterObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>another.type.to.Associate<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overriding_wildcards">Overriding Wildcards</h3>
+<div class="paragraph">
+<p>Each individual mapping section can set its own wildcard policy even if
+there is a global wildcard policy defined using the configuration block.
+For example, the following mapping does not allow wildcards:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overriding_date_format">Overriding Date Format</h3>
+<div class="paragraph">
+<p>The same is true for date format values. Each individual mapping section
+can set its own date format rules. For example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level date format default  --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">date-format</span>=<span class="hljs-string">&quot;MM-dd-yyyy HH:mm:ss&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overriding_error_handling">Overriding Error Handling</h3>
+<div class="paragraph">
+<p>You can override the error handling policy for a particular mapping. For
+example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level defaults --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">stop-on-errors</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_overriding_trim_strings_policy">Overriding Trim Strings Policy</h3>
+<div class="paragraph">
+<p>You can override the trim strings policy for a particular mapping. For
+example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level defaults --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">trim-strings</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="advancedConfiguration.html" class="navigation navigation-prev " aria-label="Previous page: Advanced Configuration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mappingclasses.html" class="navigation navigation-next " aria-label="Next page: Mapping Classes">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Global Configuration","level":"1.5.2","depth":2,"next":{"title":"Mapping Classes","level":"2.1","depth":1,"path":"documentation/mappingclasses.adoc","ref":"documentation/mappingclasses.adoc","articles":[]},"previous":{"title":"Advanced Configuration","level":"1.5.1","depth":2,"path":"documentation/advancedConfiguration.adoc","ref":"documentation/advancedConfiguration.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/globalConfiguration.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

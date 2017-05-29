@@ -1,0 +1,995 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>via Annotations · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="apimappings.html" />
+    
+    
+    <link rel="prev" href="mappings.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="whymap.html">
+            
+                <a href="whymap.html">
+            
+                    
+                    Why Map?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gettingstarted.html">
+            
+                <a href="gettingstarted.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    Mappings via XML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    via Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="apimappings.html">
+            
+                <a href="apimappings.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+            
+                <a href="advancedConfiguration.html">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+            
+                <a href="globalConfiguration.html">
+            
+                    
+                    Global Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dozer mapping concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="mappingclasses.html">
+            
+                <a href="mappingclasses.html">
+            
+                    
+                    Mapping Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="simpleproperty.html">
+            
+                <a href="simpleproperty.html">
+            
+                    
+                    Basic Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="baseattributes.html">
+            
+                <a href="baseattributes.html">
+            
+                    
+                    Inheritance Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="contextmapping.html">
+            
+                <a href="contextmapping.html">
+            
+                    
+                    Context Based Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="oneway.html">
+            
+                <a href="oneway.html">
+            
+                    
+                    One-Way Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="copybyreference.html">
+            
+                <a href="copybyreference.html">
+            
+                    
+                    Copying By Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="deepmapping.html">
+            
+                <a href="deepmapping.html">
+            
+                    
+                    Deep Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="indexmapping.html">
+            
+                <a href="indexmapping.html">
+            
+                    
+                    Indexed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="exclude.html">
+            
+                <a href="exclude.html">
+            
+                    
+                    Excluding Fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="advancedproperty.html">
+            
+                <a href="advancedproperty.html">
+            
+                    
+                    Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How do i map a type of…​?</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="stringtodatemapping.html">
+            
+                <a href="stringtodatemapping.html">
+            
+                    
+                    String to Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="collectionandarraymapping.html">
+            
+                <a href="collectionandarraymapping.html">
+            
+                    
+                    Collections and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="mapbackedproperty.html">
+            
+                <a href="mapbackedproperty.html">
+            
+                    
+                    Map Backed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="proxyhandling.html">
+            
+                <a href="proxyhandling.html">
+            
+                    
+                    Proxy Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">What if i need to customise the mapping?</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="customconverter.html">
+            
+                <a href="customconverter.html">
+            
+                    
+                    Custom Converters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="custombeanfactories.html">
+            
+                <a href="custombeanfactories.html">
+            
+                    
+                    Custom Bean Factories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="customCreateMethod.html">
+            
+                <a href="customCreateMethod.html">
+            
+                    
+                    Custom Create Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="custommethods.html">
+            
+                <a href="custommethods.html">
+            
+                    
+                    Custom get() set() Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="expressionlanguage.html">
+            
+                <a href="expressionlanguage.html">
+            
+                    
+                    Expression Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extra</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="configuration/logging.html">
+            
+                <a href="configuration/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="events.html">
+            
+                <a href="events.html">
+            
+                    
+                    Event Listening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
+            
+                <a href="configuration/statistics.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
+            
+                <a href="jmxintegration.html">
+            
+                    
+                    JMX Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    Metadata Query Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3rd Party</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="springintegration.html">
+            
+                <a href="springintegration.html">
+            
+                    
+                    Spring Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+            
+                <a href="xmlbeans.html">
+            
+                    
+                    JAXB and XMLBeans
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Schema</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    schema/beanmapping.xsd[Dozer Mapping XSD]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                    dozer-user-guide.pdf[User’s Guide PDF]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eclipse Plugin</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+            
+                <a href="eclipse-plugin/installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+            
+                <a href="eclipse-plugin/usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+            
+                <a href="eclipse-plugin/usage-xml.html">
+            
+                    
+                    via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+            
+                <a href="eclipse-plugin/usage-editor.html">
+            
+                    
+                    via Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >via Annotations</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="sect1">
+<h2 id="_annotation_mappings">Annotation Mappings</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_why_annotations">Why Annotations?</h3>
+<div class="paragraph">
+<p>One of the downsides of using Dozer for the long time was Xml. Since
+Dozer started during Xml-hype years more than five years ago that was
+pretty obvious choice back then. After that Java 5 brought us
+annotations and new industry accepted style of configuring behaviour are
+Domain-Specific Languages. DSL-like support is provided in form of
+mapping API, but since version 5.3.2 Dozer starts providing annotations
+support as well.</p>
+</div>
+<div class="paragraph">
+<p>The obvious reasons to use annotations is to avoid duplicating field and
+method names in your mapping code. The annotation can be put onto the
+mapped property itself thus reducing the amount of code. However there
+are cases when annotations should be avoided or even impossible to use.
+Some of them are the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You are mapping classes, which are not under your control, but
+provided in libraries;</p>
+</li>
+<li>
+<p>The mappings are quite complex and require many configurations;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In the first case you could be mapping JAXB generated entities or
+third-party DTOs and have no possibility to put annotations. In the
+second case there is a choice of putting lots of multi-line annotations
+or isolating the mapping code with certain duplication of entity names.
+Overannotated beans could be problematic to read and understand.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_usage">Usage</h3>
+<div class="paragraph">
+<p><strong>WARNING:</strong> Annotation support in Dozer is experimental and does not
+cover complex use cases yet. However it may be useful to implement that
+simplest mappings you have had to do in Xml or API before.</p>
+</div>
+<div class="paragraph">
+<p>The idea is very simple. You put @Mapping annotation either on getter of
+field directly. If Dozer finds that it adds a bi-directional mapping. It
+means that putting annotation once will create mappings for both
+conversion types. Type conversions (e.g. String-Long) will be chosen
+automatically. Global custom converters are resolved as well.
+Annotations work only if a conversion is subject to wildcard rule
+(active by default). The following example demonstrates annotations in
+action.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SourceBean</span> </span>{
+
+    <span class="hljs-keyword">private</span> Long id;
+
+    <span class="hljs-keyword">private</span> String name;
+
+    <span class="hljs-meta">@Mapping</span>(<span class="hljs-string">&quot;binaryData&quot;</span>)
+    <span class="hljs-keyword">private</span> String data;
+
+    <span class="hljs-meta">@Mapping</span>(<span class="hljs-string">&quot;pk&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Long <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.id;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TargetBean</span> </span>{
+
+    <span class="hljs-keyword">private</span> String pk;
+
+    <span class="hljs-keyword">private</span> String name;
+
+    <span class="hljs-keyword">private</span> String binaryData;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setPk</span><span class="hljs-params">(String pk)</span> </span>{
+        <span class="hljs-keyword">this</span>.pk = pk;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Mapping the given beans with Dozer will result in all three fields being
+mapped. Property &quot;name&quot; will be mapped by naming convention. Property
+&quot;id&quot; will be transformed to &quot;pk&quot;. Field &quot;data&quot; will be moved to
+&quot;binaryData&quot;. Do not worry about <em>private</em> modifier; it will be handled
+automatically.</p>
+</div>
+<div class="paragraph">
+<p>Currently Dozer offers only one annotation, but the next ones will be
+added in following releases. As for now you can mix and match all
+flavours of mapping types to achieve the desired effect: Xml, API and
+Annotations.</p>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mappings.html" class="navigation navigation-prev " aria-label="Previous page: Mappings via XML">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="apimappings.html" class="navigation navigation-next " aria-label="Next page: via API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"via Annotations","level":"1.4.1","depth":2,"next":{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]},"previous":{"title":"Mappings via XML","level":"1.4","depth":1,"path":"documentation/mappings.adoc","ref":"documentation/mappings.adoc","articles":[{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/annotations.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
