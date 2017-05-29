@@ -1,0 +1,1088 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Map Backed Property Mapping · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="proxyhandling.html" />
+    
+    
+    <link rel="prev" href="collectionandarraymapping.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="whymap.html">
+            
+                <a href="whymap.html">
+            
+                    
+                    Why Map?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gettingstarted.html">
+            
+                <a href="gettingstarted.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    Mappings via XML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    via Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="apimappings.html">
+            
+                <a href="apimappings.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+            
+                <a href="advancedConfiguration.html">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+            
+                <a href="globalConfiguration.html">
+            
+                    
+                    Global Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dozer mapping concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="mappingclasses.html">
+            
+                <a href="mappingclasses.html">
+            
+                    
+                    Mapping Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="simpleproperty.html">
+            
+                <a href="simpleproperty.html">
+            
+                    
+                    Basic Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="baseattributes.html">
+            
+                <a href="baseattributes.html">
+            
+                    
+                    Inheritance Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="contextmapping.html">
+            
+                <a href="contextmapping.html">
+            
+                    
+                    Context Based Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="oneway.html">
+            
+                <a href="oneway.html">
+            
+                    
+                    One-Way Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="copybyreference.html">
+            
+                <a href="copybyreference.html">
+            
+                    
+                    Copying By Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="deepmapping.html">
+            
+                <a href="deepmapping.html">
+            
+                    
+                    Deep Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="indexmapping.html">
+            
+                <a href="indexmapping.html">
+            
+                    
+                    Indexed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="exclude.html">
+            
+                <a href="exclude.html">
+            
+                    
+                    Excluding Fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="advancedproperty.html">
+            
+                <a href="advancedproperty.html">
+            
+                    
+                    Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How do i map a type of…​?</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="stringtodatemapping.html">
+            
+                <a href="stringtodatemapping.html">
+            
+                    
+                    String to Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="collectionandarraymapping.html">
+            
+                <a href="collectionandarraymapping.html">
+            
+                    
+                    Collections and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.4" data-path="mapbackedproperty.html">
+            
+                <a href="mapbackedproperty.html">
+            
+                    
+                    Map Backed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="proxyhandling.html">
+            
+                <a href="proxyhandling.html">
+            
+                    
+                    Proxy Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">What if i need to customise the mapping?</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="customconverter.html">
+            
+                <a href="customconverter.html">
+            
+                    
+                    Custom Converters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="custombeanfactories.html">
+            
+                <a href="custombeanfactories.html">
+            
+                    
+                    Custom Bean Factories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="customCreateMethod.html">
+            
+                <a href="customCreateMethod.html">
+            
+                    
+                    Custom Create Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="custommethods.html">
+            
+                <a href="custommethods.html">
+            
+                    
+                    Custom get() set() Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="expressionlanguage.html">
+            
+                <a href="expressionlanguage.html">
+            
+                    
+                    Expression Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extra</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="configuration/logging.html">
+            
+                <a href="configuration/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="events.html">
+            
+                <a href="events.html">
+            
+                    
+                    Event Listening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
+            
+                <a href="configuration/statistics.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
+            
+                <a href="jmxintegration.html">
+            
+                    
+                    JMX Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    Metadata Query Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3rd Party</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="springintegration.html">
+            
+                <a href="springintegration.html">
+            
+                    
+                    Spring Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+            
+                <a href="xmlbeans.html">
+            
+                    
+                    JAXB and XMLBeans
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Schema</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    schema/beanmapping.xsd[Dozer Mapping XSD]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                    dozer-user-guide.pdf[User’s Guide PDF]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eclipse Plugin</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+            
+                <a href="eclipse-plugin/installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+            
+                <a href="eclipse-plugin/usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+            
+                <a href="eclipse-plugin/usage-xml.html">
+            
+                    
+                    via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+            
+                <a href="eclipse-plugin/usage-editor.html">
+            
+                    
+                    via Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Map Backed Property Mapping</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="sect1">
+<h2 id="_map_backed_property_mapping">Map Backed Property Mapping</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_map_to_map">Map to Map</h3>
+<div class="paragraph">
+<p>Dozer will map a java.util.Map to a java.util.Map. If there are complex
+types with hints it will do deep recursion mapping as well. If the
+destination map exists it will add elements to the existing map.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.MapToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>standardMapWithHint<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>standardMapWithHint<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-hint</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">a-hint</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mapping_field_level_properties_to_a_java_util_map_or_a_custom_map_with_unique_get_set_methods">Mapping Field Level Properties to a java.util.Map or a Custom Map with unique Get/Set methods</h3>
+<div class="paragraph">
+<p>Dozer supports mapping map backed properties at the field level. The map
+can either implement the java.util.Map Interface or be a custom map with
+a set of unique Get/Set methods.</p>
+</div>
+<div class="paragraph">
+<p>In this example Field A is a basic String and it is mapped to Field B
+which is a HashMap. The key in the HashMap will be &quot;stringProperty&quot; (the
+attribute name) and the value will be whatever value is stored in that
+attribute.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hashMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example shows Field A is a basic String and it is mapped to Field B
+which is a HashMap. The key in the HashMap will be &quot;myStringProperty&quot;
+and the value will be whatever value is stored in that attribute. Also
+notice that Field A has a unique setter() method name.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myStringProperty&quot;</span>&gt;</span>hashMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This example shows Field A is a basic String and it is mapped to Field B
+which is a custom map. The key in the custom map will be
+&quot;myCustomProperty&quot; and the value will be whatever value is stored in
+that attribute. Notice that Field B has unique map getter() and map
+setter() method names. If you are using a custom map you must explicitly
+set the map Get/Set method names. A destination hint can also be
+provided if your custom map implements an Interface or is an Abstract
+class.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myCustomProperty&quot;</span>&gt;</span>customMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myCustomNullProperty&quot;</span>&gt;</span>nullCustomMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.map.CustomMap<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty5<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span>&gt;</span>customMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mapping_class_level_properties_to_a_java_util_map_or_a_custom_map_with_unique_get_set_methods">Mapping Class Level Properties to a java.util.Map or a Custom Map with unique Get/Set methods</h3>
+<div class="paragraph">
+<p>Dozer can also map entire complex objects directly to a java.util.Map or
+a custom map object. This example shows the declaration of a mapping
+between a complex object (PropertyToMap) and a java.util.Map. When doing
+this you need to explicitly define a unique map-id for the mapping. This
+is used when determining which map to use at run-time. Every attribute
+on the PropertyToMap class will be mapped to the java.util.Map. You DO
+NOT need to explicitly define these mappings. Field exclude mappings can
+be used to exclude fields at run-time. If the attribute name is not the
+same as the map key just set the key attribute for a custom field
+mapping. The mapping to stringProperty2 shows an example of this.</p>
+</div>
+<div class="paragraph">
+<p>The second example shows how to setup a custom map object. The only
+difference here is that you need to explicitly define map-set-method and
+map-get-method values. These correspond to the java.util.Map get() and
+put() methods.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;myTestMapping&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.util.Map<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myStringProperty&quot;</span>&gt;</span>this<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field-exclude</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>excludeMe<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>this<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field-exclude</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;myCustomTestMapping&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span>&gt;</span>
+      org.dozer.vo.map.CustomMap
+  <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myStringProperty&quot;</span>&gt;</span>this<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field-exclude</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>excludeMe<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>this<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field-exclude</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The example below shows how to use these mappings. Notice that the field
+mappings reference a map-id. The first field mapping will use the
+myTestMapping defined mapping and map accordingly. Same goes with the
+custom mapping.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">&lt;mapping&gt;
+    &lt;class-a&gt;org.dozer.vo.map.MapTestObject&lt;/class-a&gt;
+    &lt;class-b&gt;org.dozer.vo.map.MapTestObjectPrime&lt;/class-b&gt;
+    &lt;field map-id=&quot;myTestMapping&quot;&gt;
+        &lt;a&gt;propertyToMap&lt;/a&gt;
+        &lt;b&gt;propertyToMapMap&lt;/b&gt;
+    &lt;/field&gt;
+    &lt;field map-id=&quot;myTestMapping&quot;&gt;
+        &lt;a&gt;propertyToMapToNullMap&lt;/a&gt;
+        &lt;b&gt;nullPropertyToMapMap&lt;/b&gt;
+        &lt;b-hint&gt;java.util.HashMap&lt;/b-hint&gt;
+    &lt;/field&gt;
+    &lt;field map-id=&quot;myCustomTestMapping&quot;&gt;
+        &lt;a&gt;propertyToCustomMap&lt;/a&gt;
+        &lt;b&gt;propertyToCustomMapMap&lt;/b&gt;
+    &lt;/field&gt;
+&lt;/mapping&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The Class Level map backed mappings can also be used as a standard
+mapping. For this dozer has a new API. In addition to the source and
+destination classes you can now pass in the map reference Id.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-comment">// Example 1</span>
+PropertyToMap ptm = <span class="hljs-keyword">new</span> PropertyToMap();
+ptm.setStringProperty(<span class="hljs-string">&quot;stringPropertyValue&quot;</span>);
+ptm.addStringProperty2(<span class="hljs-string">&quot;stringProperty2Value&quot;</span>);
+Map map = Mapper.map(ptm, HashMap.class, <span class="hljs-string">&quot;myTestMapping&quot;</span>);
+
+<span class="hljs-comment">// Example 2</span>
+CustomMap customMap = mapper.map(ptm, CustomMap.class, <span class="hljs-string">&quot;myCustomTestMapping&quot;</span>);
+
+<span class="hljs-comment">// Example 3</span>
+CustomMap custom = <span class="hljs-keyword">new</span> CustomMap();
+custom.putValue(<span class="hljs-string">&quot;myKey&quot;</span>, <span class="hljs-string">&quot;myValue&quot;</span>);
+Mapper.map(ptm, custom, <span class="hljs-string">&quot;myCustomTestMapping&quot;</span>);
+
+<span class="hljs-comment">// Example 4 - Map Back</span>
+Map map = <span class="hljs-keyword">new</span> HashMap();
+map.put(<span class="hljs-string">&quot;stringProperty&quot;</span>, <span class="hljs-string">&quot;stringPropertyValue&quot;</span>);
+PropertyToMap property = mapper.map(map, PropertyToMap.class, <span class="hljs-string">&quot;myTestMapping&quot;</span>);
+assertEquals(<span class="hljs-string">&quot;stringPropertyValue&quot;</span>, property.getStringProperty());</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="collectionandarraymapping.html" class="navigation navigation-prev " aria-label="Previous page: Collections and Arrays">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="proxyhandling.html" class="navigation navigation-next " aria-label="Next page: Proxy Objects">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Map Backed Property Mapping","level":"3.4","depth":1,"next":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"previous":{"title":"Collections and Arrays","level":"3.3","depth":1,"path":"documentation/collectionandarraymapping.adoc","ref":"documentation/collectionandarraymapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/mapbackedproperty.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

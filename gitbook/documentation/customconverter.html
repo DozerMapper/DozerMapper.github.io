@@ -1,0 +1,1244 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Custom Converters · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="custombeanfactories.html" />
+    
+    
+    <link rel="prev" href="proxyhandling.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="whymap.html">
+            
+                <a href="whymap.html">
+            
+                    
+                    Why Map?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gettingstarted.html">
+            
+                <a href="gettingstarted.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    Mappings via XML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    via Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="apimappings.html">
+            
+                <a href="apimappings.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+            
+                <a href="advancedConfiguration.html">
+            
+                    
+                    Advanced Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+            
+                <a href="globalConfiguration.html">
+            
+                    
+                    Global Configuration
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dozer mapping concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="mappingclasses.html">
+            
+                <a href="mappingclasses.html">
+            
+                    
+                    Mapping Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="simpleproperty.html">
+            
+                <a href="simpleproperty.html">
+            
+                    
+                    Basic Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="baseattributes.html">
+            
+                <a href="baseattributes.html">
+            
+                    
+                    Inheritance Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="contextmapping.html">
+            
+                <a href="contextmapping.html">
+            
+                    
+                    Context Based Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="oneway.html">
+            
+                <a href="oneway.html">
+            
+                    
+                    One-Way Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="copybyreference.html">
+            
+                <a href="copybyreference.html">
+            
+                    
+                    Copying By Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="deepmapping.html">
+            
+                <a href="deepmapping.html">
+            
+                    
+                    Deep Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="indexmapping.html">
+            
+                <a href="indexmapping.html">
+            
+                    
+                    Indexed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="exclude.html">
+            
+                <a href="exclude.html">
+            
+                    
+                    Excluding Fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="advancedproperty.html">
+            
+                <a href="advancedproperty.html">
+            
+                    
+                    Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How do i map a type of…​?</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="stringtodatemapping.html">
+            
+                <a href="stringtodatemapping.html">
+            
+                    
+                    String to Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="collectionandarraymapping.html">
+            
+                <a href="collectionandarraymapping.html">
+            
+                    
+                    Collections and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="mapbackedproperty.html">
+            
+                <a href="mapbackedproperty.html">
+            
+                    
+                    Map Backed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="proxyhandling.html">
+            
+                <a href="proxyhandling.html">
+            
+                    
+                    Proxy Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">What if i need to customise the mapping?</li>
+        
+        
+    
+        <li class="chapter active" data-level="4.1" data-path="customconverter.html">
+            
+                <a href="customconverter.html">
+            
+                    
+                    Custom Converters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="custombeanfactories.html">
+            
+                <a href="custombeanfactories.html">
+            
+                    
+                    Custom Bean Factories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="customCreateMethod.html">
+            
+                <a href="customCreateMethod.html">
+            
+                    
+                    Custom Create Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="custommethods.html">
+            
+                <a href="custommethods.html">
+            
+                    
+                    Custom get() set() Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="expressionlanguage.html">
+            
+                <a href="expressionlanguage.html">
+            
+                    
+                    Expression Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extra</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="configuration/logging.html">
+            
+                <a href="configuration/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="events.html">
+            
+                <a href="events.html">
+            
+                    
+                    Event Listening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
+            
+                <a href="configuration/statistics.html">
+            
+                    
+                    Statistics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
+            
+                <a href="jmxintegration.html">
+            
+                    
+                    JMX Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    Metadata Query Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3rd Party</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="springintegration.html">
+            
+                <a href="springintegration.html">
+            
+                    
+                    Spring Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+            
+                <a href="xmlbeans.html">
+            
+                    
+                    JAXB and XMLBeans
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Schema</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" >
+            
+                <span>
+            
+                    
+                    schema/beanmapping.xsd[Dozer Mapping XSD]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" >
+            
+                <span>
+            
+                    
+                    dozer-user-guide.pdf[User’s Guide PDF]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eclipse Plugin</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+            
+                <a href="eclipse-plugin/installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+            
+                <a href="eclipse-plugin/usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+            
+                <a href="eclipse-plugin/usage-xml.html">
+            
+                    
+                    via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+            
+                <a href="eclipse-plugin/usage-editor.html">
+            
+                    
+                    via Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Custom Converters</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="sect1">
+<h2 id="_custom_converters">Custom Converters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Custom converters are used to perform custom mapping between two
+objects. In the Configuration block, you can add some XML to tell Dozer
+to use a custom converter for certain class A and class B types. When a
+custom converter is specified for a class A and class B combination,
+Dozer will invoke the custom converter to perform the data mapping
+instead of the standard mapping logic.</p>
+</div>
+<div class="paragraph">
+<p>Your custom converter must implement the org.dozer.CustomConverter
+interface in order for Dozer to accept it. Otherwise an exception will
+be thrown.</p>
+</div>
+<div class="paragraph">
+<p>Custom converters are shared across mapping files. This means that you
+can define them once in a mapping file and it will be applied to all
+class mappings in other mapping files that match the Class A - Class B
+pattern. In the example below, whenever Dozer comes across a mapping
+where the src/dest class match the custom converter definition, it will
+invoke the custom converter class instead of performing the typical
+mapping.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mappings</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://dozer.sourceforge.net&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.CustomDoubleObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.lang.Double<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
+            <span class="hljs-comment">&lt;!-- You are responsible for mapping everything between
+           ClassA and ClassB --&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomHashMapConverter&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>
+          org.dozer.vo.TestCustomConverterHashMapObject
+        <span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>
+          org.dozer.vo.TestCustomConverterHashMapPrimeObject
+        <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mappings</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Custom converters can also be specified at the individual field level.
+In the example below, Dozer will invoke the custom converter to perform
+the field mapping.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SimpleObj<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SimpleObjPrime2<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">custom-converter</span>=<span class="hljs-string">&quot;org.dozer.converters.StringAppendCustomConverter&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>field1Prime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Custom converter &apos;instances&apos; can be reused at the individual field
+level. In the example below, Dozer will invoke the custom converter to
+perform the field mapping.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SimpleObj<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SimpleObjPrime2<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">custom-converter-id</span>=<span class="hljs-string">&quot;CustomConverterWithId&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>field1Prime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CustomConverter instances need to be injected into the DozerBeanMapper
+if you need to do some manipulation with them before they are used in
+dozer. They can also be set programmatically on the DozerBeanMapper if
+you do not use Spring.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">default-lazy-init</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>systempropertymapping1.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>injectedCustomConverter.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customConvertersWithId&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">map</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">entry</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;CustomConverterWithId&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;configurableConverterBeanInstance1&quot;</span> /&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">entry</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;CustomConverterWithId2&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;configurableConverterBeanInstance2&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">map</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Sample custom converter implementation:</p>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> Custom Converters get invoked when the source value is null, so
+you need to explicitly handle null values in your custom converter
+implementation.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestCustomConverter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CustomConverter</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object destination, Object source,
+      Class destClass, Class sourceClass)</span> </span>{
+    <span class="hljs-keyword">if</span> (source == <span class="hljs-keyword">null</span>) {
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+    CustomDoubleObject dest = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> Double) {
+      <span class="hljs-comment">// check to see if the object already exists</span>
+      <span class="hljs-keyword">if</span> (destination == <span class="hljs-keyword">null</span>) {
+        dest = <span class="hljs-keyword">new</span> CustomDoubleObject();
+      } <span class="hljs-keyword">else</span> {
+        dest = (CustomDoubleObject) destination;
+      }
+      dest.setTheDouble(((Double) source).doubleValue());
+      <span class="hljs-keyword">return</span> dest;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> CustomDoubleObject) {
+      <span class="hljs-keyword">double</span> sourceObj =
+        ((CustomDoubleObject) source).getTheDouble();
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Double(sourceObj);
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MappingException(<span class="hljs-string">&quot;Converter TestCustomConverter &quot;</span>
+          + <span class="hljs-string">&quot;used incorrectly. Arguments passed in were:&quot;</span>
+          + destination + <span class="hljs-string">&quot; and &quot;</span> + source);
+    }
+  }</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>CustomConverters can also be injected into the DozerBeanMapper if you
+need to do some manipulation with them before they are used in dozer.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">default-lazy-init</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>systempropertymapping1.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>injectedCustomConverter.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customConverters&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ref</span> <span class="hljs-attr">bean</span>=<span class="hljs-string">&quot;customConverterTest&quot;</span> /&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- custom converter --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;customConverterTest&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.converters.InjectedCustomConverter&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;injectedName&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>injectedName<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_array_types">Support for Array Types</h3>
+<div class="paragraph">
+<p>You can specify a custom converter for Array types. For example, if you
+want to use a custom converter for mapping between an array of objects
+and a String you would use the following mapping notation. Dozer
+generically uses ClassLoader.loadClass() when parsing the mapping files.
+For arrays, java expects the class name in the following format&#x2026;&#x200B;.
+[Lorg.dozer.vo.SimpleObj;</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.StringAppendCustomConverter&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>[Lorg.dozer.vo.SimpleObj;<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.lang.String<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_support_for_primitives">Support for primitives</h3>
+<div class="paragraph">
+<p>You can specify a custom converter for primitive types. Just use the
+primitive wrapper class when defining the custom coverter mapping. In
+the following example, Dozer will use the specified custom converter
+when mapping between SomeObject and the int primitive type. Note that
+Dozer will also use the custom converter when mapping between SomeObject
+and the Integer wrapper type.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;somePackage.SomeCustomConverter&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>somePackage.SomeObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.lang.Integer<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_configurable_custom_converters">Configurable Custom Converters</h3>
+<div class="paragraph">
+<p>You can define a custom converter, which can be configured from mappings
+via configuration parameter. In this case you should implement
+ConfigurableCustomConverter interface instead of usual CustomConverter.
+Configurable converter has additional attribute provided in runtime -
+param. Parameter is provided using custom-converter-param attribute.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.BeanA<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.BeanB<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">custom-converter</span>=<span class="hljs-string">&quot;org.dozer.converters.MathOperationConverter&quot;</span> <span class="hljs-attr">custom-converter-param</span>=<span class="hljs-string">&quot;+&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>amount<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>amount<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Configurable custom converter should be used when you have similar
+behaviour in many cases, which can be parametrized, but the number of
+conbinations is too high to do simple Custom Converter subclassing.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MathOperationConverter</span>
+    <span class="hljs-keyword">implements</span> <span class="hljs-title">ConfigurableCustomConverter</span> </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object destinationFieldValue,
+                        Object sourceFieldValue,
+                        Class destinationClass,
+                        Class sourceClass, String param)</span> </span>{
+    Integer source = (Integer) sourceFieldValue;
+    Integer destination = (Integer) destinationFieldValue;
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;+&quot;</span>.equals(param)) {
+      <span class="hljs-keyword">return</span> destination.intValue + source.intValue();
+    }
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;-&quot;</span>.equals(param)) {
+      <span class="hljs-keyword">return</span> destination.intValue - source.intValue();
+    }
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_new_custom_converter_api">New Custom Converter API</h3>
+<div class="paragraph">
+<p>While providing great deal of flexibility Custom Converter API described
+above is written on fairly low levele of abstraction. This results in
+converter, which code is difficult to understand and to reuse in other
+ways than plugging into Dozer mapping. However it is not uncommon
+situation when the same convertation logic should be called from a place
+other than bean mapping framework.
+version of Dozer gets shipped with new - cleaner API for defining
+custom converter, which gives you more obvious API while taking away
+certain part of control of the executions flow. The following example
+demonstrates simple, yet working converter using new API.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewDozerConverter</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Boolean</span>&gt; </span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NewDozerConverter</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>(String.class, Boolean.class);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">convertTo</span><span class="hljs-params">(String source, Boolean destination)</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;yes&quot;</span>.equals(source)) {
+      <span class="hljs-keyword">return</span> Boolean.TRUE;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;no&quot;</span>.equals(source)) {
+      <span class="hljs-keyword">return</span> Boolean.FALSE;
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">convertFrom</span><span class="hljs-params">(Boolean source, String destination)</span> </span>{
+    <span class="hljs-keyword">if</span> (Boolean.TRUE.equals(source)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;yes&quot;</span>;
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Boolean.FALSE.equals(source)) {
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;no&quot;</span>;
+    }
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
+  }
+
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that Java 5 Generics are supported and you do not need to cast
+source object to desired type as previously.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_data_structure_conversions">Data Structure Conversions</h3>
+<div class="paragraph">
+<p>There are cases where it is required to perform programmatic data
+structure conversion, say copy each odd element in a list as map key,
+but each even as map value. In this case it is needed to define
+transformation of the structure while relying on usual Dozer mapping
+support for individual values. For this purposes it is possible to use
+<em>MapperAware</em> interface, which injects current mapper instance inside
+custom converter.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Converter</span>
+    <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span> &lt;<span class="hljs-title">List</span>, <span class="hljs-title">Map</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">MapperAware</span> </span>{
+
+  <span class="hljs-keyword">private</span> Mapper mapper;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Converter</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">super</span>(List.class, Map.class);
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> Map <span class="hljs-title">convertTo</span><span class="hljs-params">(List source, Map destination)</span> </span>{
+    Map originalToMapped = <span class="hljs-keyword">new</span> HashMap();
+    <span class="hljs-keyword">for</span> (Source item : source) {
+      Target mappedItem = mapper.map(item, Target.class);
+      originalToMapped.put(item, mappedItem);
+    }
+    <span class="hljs-keyword">return</span> originalToMapped;
+  }
+
+&lt;...&gt;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMapper</span><span class="hljs-params">(Mapper mapper)</span> </span>{
+    <span class="hljs-keyword">this</span>.mapper = mapper;
+  }
+
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="proxyhandling.html" class="navigation navigation-prev " aria-label="Previous page: Proxy Objects">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="custombeanfactories.html" class="navigation navigation-next " aria-label="Next page: Custom Bean Factories">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Custom Converters","level":"4.1","depth":1,"next":{"title":"Custom Bean Factories","level":"4.2","depth":1,"path":"documentation/custombeanfactories.adoc","ref":"documentation/custombeanfactories.adoc","articles":[]},"previous":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/customconverter.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
