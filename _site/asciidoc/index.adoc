@@ -9,6 +9,10 @@ ifdef::env-github,env-browser[:outfilesuffix: .adoc]
 .. link:news/news{outfilesuffix}[News]
 ... link:news/archived-news{outfilesuffix}[Archived News]
 
+== Documentation
+.. link:gitbook/index.html[Git Book]
+.. link:user-guide.pdf[User Guide.pdf]
+
 == Community
 .. link:community/articles{outfilesuffix}[Articles]
 .. link:community/support{outfilesuffix}[Support]
