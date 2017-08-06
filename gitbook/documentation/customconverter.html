@@ -659,16 +659,49 @@
 
     
         
+        <li class="header">Migration</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../migration/v5-to-v6.html">
+            
+                <a href="../migration/v5-to-v6.html">
+            
+                    
+                    v5 to v6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../migration/v6-to-v61.html">
+            
+                <a href="../migration/v6-to-v61.html">
+            
+                    
+                    v6.0.0 to v6.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
         <li class="header">Schema</li>
         
         
     
-        <li class="chapter " data-level="8.1" >
+        <li class="chapter " data-level="9.1" >
             
                 <span>
             
                     
-                    schema/beanmapping.xsd[Dozer Mapping XSD]
+                    schema/bean-mapping.xsd[Dozer Mapping XSD]
             
                 </span>
             
@@ -676,7 +709,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" >
+        <li class="chapter " data-level="9.2" >
             
                 <span>
             
@@ -696,7 +729,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+        <li class="chapter " data-level="10.1" data-path="eclipse-plugin/installation.html">
             
                 <a href="eclipse-plugin/installation.html">
             
@@ -709,7 +742,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+        <li class="chapter " data-level="10.2" data-path="eclipse-plugin/usage.html">
             
                 <a href="eclipse-plugin/usage.html">
             
@@ -723,7 +756,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+        <li class="chapter " data-level="10.2.1" data-path="eclipse-plugin/usage-xml.html">
             
                 <a href="eclipse-plugin/usage-xml.html">
             
@@ -736,7 +769,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+        <li class="chapter " data-level="10.2.2" data-path="eclipse-plugin/usage-editor.html">
             
                 <a href="eclipse-plugin/usage-editor.html">
             
@@ -811,7 +844,7 @@ Dozer will invoke the custom converter to perform the data mapping
 instead of the standard mapping logic.</p>
 </div>
 <div class="paragraph">
-<p>Your custom converter must implement the org.dozer.CustomConverter
+<p>Your custom converter must implement the <code>org.dozer.CustomConverter</code>
 interface in order for Dozer to accept it. Otherwise an exception will
 be thrown.</p>
 </div>
@@ -827,9 +860,9 @@ mapping.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
-<span class="hljs-tag">&lt;<span class="hljs-name">mappings</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://dozer.sourceforge.net&quot;</span>
-    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mappings</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping&quot;</span>
+          <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+          <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
             <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
@@ -887,10 +920,8 @@ perform the field mapping.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>CustomConverter instances need to be injected into the DozerBeanMapper
-if you need to do some manipulation with them before they are used in
-dozer. They can also be set programmatically on the DozerBeanMapper if
-you do not use Spring.</p>
+<p><code>CustomConverter</code> instances can be provided during configuration of <code>Mapper</code> via
+<code>DozerBeanMapperBuilder#withCustomConverter(..)</code> method.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -899,7 +930,6 @@ you do not use Spring.</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>systempropertymapping1.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>injectedCustomConverter.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
@@ -918,8 +948,8 @@ you do not use Spring.</p>
 <p>Sample custom converter implementation:</p>
 </div>
 <div class="paragraph">
-<p><strong>Note:</strong> Custom Converters get invoked when the source value is null, so
-you need to explicitly handle null values in your custom converter
+<p><strong>Note:</strong> Custom Converters get invoked when the source value is <code>null</code>, so
+you need to explicitly handle <code>null</code> values in your custom converter
 implementation.</p>
 </div>
 <div class="listingblock">
@@ -954,7 +984,7 @@ implementation.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>CustomConverters can also be injected into the DozerBeanMapper if you
+<p>CustomConverters can also be injected into the <code>Mapper</code> if you
 need to do some manipulation with them before they are used in dozer.</p>
 </div>
 <div class="listingblock">
@@ -964,7 +994,6 @@ need to do some manipulation with them before they are used in dozer.</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>systempropertymapping1.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>injectedCustomConverter.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
@@ -990,9 +1019,9 @@ need to do some manipulation with them before they are used in dozer.</p>
 <p>You can specify a custom converter for Array types. For example, if you
 want to use a custom converter for mapping between an array of objects
 and a String you would use the following mapping notation. Dozer
-generically uses ClassLoader.loadClass() when parsing the mapping files.
-For arrays, java expects the class name in the following format&#x2026;&#x200B;.
-[Lorg.dozer.vo.SimpleObj;</p>
+generically uses <code>ClassLoader.loadClass()</code> when parsing the mapping files.
+For arrays, java expects the class name in the following format:
+<code>[Lorg.dozer.vo.SimpleObj</code>;</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1007,11 +1036,11 @@ For arrays, java expects the class name in the following format&#x2026;&#x200B;.
 <h3 id="_support_for_primitives">Support for primitives</h3>
 <div class="paragraph">
 <p>You can specify a custom converter for primitive types. Just use the
-primitive wrapper class when defining the custom coverter mapping. In
+primitive wrapper class when defining the custom converter mapping. In
 the following example, Dozer will use the specified custom converter
 when mapping between SomeObject and the int primitive type. Note that
-Dozer will also use the custom converter when mapping between SomeObject
-and the Integer wrapper type.</p>
+Dozer will also use the custom converter when mapping between <code>SomeObject</code>
+and the <code>Integer</code> wrapper type.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1027,9 +1056,9 @@ and the Integer wrapper type.</p>
 <div class="paragraph">
 <p>You can define a custom converter, which can be configured from mappings
 via configuration parameter. In this case you should implement
-ConfigurableCustomConverter interface instead of usual CustomConverter.
+<code>ConfigurableCustomConverter</code> interface instead of usual <code>CustomConverter</code>.
 Configurable converter has additional attribute provided in runtime -
-param. Parameter is provided using custom-converter-param attribute.</p>
+param. Parameter is provided using <code>custom-converter-param</code> attribute.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1046,7 +1075,7 @@ param. Parameter is provided using custom-converter-param attribute.</p>
 <div class="paragraph">
 <p>Configurable custom converter should be used when you have similar
 behaviour in many cases, which can be parametrized, but the number of
-conbinations is too high to do simple Custom Converter subclassing.</p>
+combinations is too high to do simple Custom Converter subclassing.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1075,10 +1104,10 @@ conbinations is too high to do simple Custom Converter subclassing.</p>
 <h3 id="_new_custom_converter_api">New Custom Converter API</h3>
 <div class="paragraph">
 <p>While providing great deal of flexibility Custom Converter API described
-above is written on fairly low levele of abstraction. This results in
+above is written on fairly low level of abstraction. This results in
 converter, which code is difficult to understand and to reuse in other
 ways than plugging into Dozer mapping. However it is not uncommon
-situation when the same convertation logic should be called from a place
+situation when the same conversion logic should be called from a place
 other than bean mapping framework.
 version of Dozer gets shipped with new - cleaner API for defining
 custom converter, which gives you more obvious API while taking away
@@ -1128,7 +1157,7 @@ structure conversion, say copy each odd element in a list as map key,
 but each even as map value. In this case it is needed to define
 transformation of the structure while relying on usual Dozer mapping
 support for individual values. For this purposes it is possible to use
-<em>MapperAware</em> interface, which injects current mapper instance inside
+<code>MapperAware</code> interface, which injects current mapper instance inside
 custom converter.</p>
 </div>
 <div class="listingblock">
@@ -1205,7 +1234,7 @@ custom converter.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Custom Converters","level":"4.1","depth":1,"next":{"title":"Custom Bean Factories","level":"4.2","depth":1,"path":"documentation/custombeanfactories.adoc","ref":"documentation/custombeanfactories.adoc","articles":[]},"previous":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/customconverter.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Custom Converters","level":"4.1","depth":1,"next":{"title":"Custom Bean Factories","level":"4.2","depth":1,"path":"documentation/custombeanfactories.adoc","ref":"documentation/custombeanfactories.adoc","articles":[]},"previous":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/customconverter.adoc","mtime":"2017-06-20T07:09:42.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

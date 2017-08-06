@@ -659,16 +659,49 @@
 
     
         
+        <li class="header">Migration</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../migration/v5-to-v6.html">
+            
+                <a href="../migration/v5-to-v6.html">
+            
+                    
+                    v5 to v6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../migration/v6-to-v61.html">
+            
+                <a href="../migration/v6-to-v61.html">
+            
+                    
+                    v6.0.0 to v6.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
         <li class="header">Schema</li>
         
         
     
-        <li class="chapter " data-level="8.1" >
+        <li class="chapter " data-level="9.1" >
             
                 <span>
             
                     
-                    schema/beanmapping.xsd[Dozer Mapping XSD]
+                    schema/bean-mapping.xsd[Dozer Mapping XSD]
             
                 </span>
             
@@ -676,7 +709,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" >
+        <li class="chapter " data-level="9.2" >
             
                 <span>
             
@@ -696,7 +729,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+        <li class="chapter " data-level="10.1" data-path="eclipse-plugin/installation.html">
             
                 <a href="eclipse-plugin/installation.html">
             
@@ -709,7 +742,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+        <li class="chapter " data-level="10.2" data-path="eclipse-plugin/usage.html">
             
                 <a href="eclipse-plugin/usage.html">
             
@@ -723,7 +756,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+        <li class="chapter " data-level="10.2.1" data-path="eclipse-plugin/usage-xml.html">
             
                 <a href="eclipse-plugin/usage-xml.html">
             
@@ -736,7 +769,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+        <li class="chapter " data-level="10.2.2" data-path="eclipse-plugin/usage-editor.html">
             
                 <a href="eclipse-plugin/usage-editor.html">
             
@@ -803,29 +836,29 @@
 <h2 id="_event_listening">Event Listening</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By implementing the DozerEventListener interface dozer allows you to
+<p>By implementing the <code>DozerEventListener</code> interface dozer allows you to
 listen to 4 different events:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>mappingStarted</p>
+<p><code>mappingStarted</code></p>
 </li>
 <li>
-<p>mappingFinished</p>
+<p><code>mappingFinished</code></p>
 </li>
 <li>
-<p>preWritingDestinationValue</p>
+<p><code>preWritingDestinationValue</code></p>
 </li>
 <li>
-<p>postWritingDestinationValue</p>
+<p><code>postWritingDestinationValue</code></p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>A DozerEvent object is passed into these callback methods which stores
-information about the ClassMap, FieldMap, Source object, destination
-object, and destination value. This will allow you to extend dozer and
+<p>A <code>DozerEvent</code> object is passed into these callback methods which stores
+information about the <code>ClassMap</code>, <code>FieldMap</code>, source object, destination
+object, and destination value. This will allow you to extend Dozer and
 manipulate mapped objects at run-time. The interface is shown below:</p>
 </div>
 <div class="listingblock">
@@ -839,9 +872,9 @@ manipulate mapped objects at run-time. The interface is shown below:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>The listeners that you create can be injected to the DozerBeanMapper
-using an IOC like Spring or set directly on your DozerBeanMapper
-instance by using the setEventListeners() method. Below is an example
+<p>The listeners that you create can be injected into the <code>Mapper</code>
+using an IOC like Spring or set directly during <code>Mapper</code> instance configuration
+using <code>DozerBeanMapperBuilder#withEventListener(..)</code> method. Below is an example
 using Spring to inject an event listener:</p>
 </div>
 <div class="listingblock">
@@ -908,7 +941,7 @@ using Spring to inject an event listener:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Event Listening","level":"5.2","depth":1,"next":{"title":"Statistics","level":"5.3","depth":1,"path":"documentation/configuration/statistics.adoc","ref":"documentation/configuration/statistics.adoc","articles":[]},"previous":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/events.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Event Listening","level":"5.2","depth":1,"next":{"title":"Statistics","level":"5.3","depth":1,"path":"documentation/configuration/statistics.adoc","ref":"documentation/configuration/statistics.adoc","articles":[]},"previous":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/events.adoc","mtime":"2017-06-20T07:09:42.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
