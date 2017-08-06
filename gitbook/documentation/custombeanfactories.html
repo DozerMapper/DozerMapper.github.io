@@ -659,16 +659,49 @@
 
     
         
+        <li class="header">Migration</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../migration/v5-to-v6.html">
+            
+                <a href="../migration/v5-to-v6.html">
+            
+                    
+                    v5 to v6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../migration/v6-to-v61.html">
+            
+                <a href="../migration/v6-to-v61.html">
+            
+                    
+                    v6.0.0 to v6.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
         <li class="header">Schema</li>
         
         
     
-        <li class="chapter " data-level="8.1" >
+        <li class="chapter " data-level="9.1" >
             
                 <span>
             
                     
-                    schema/beanmapping.xsd[Dozer Mapping XSD]
+                    schema/bean-mapping.xsd[Dozer Mapping XSD]
             
                 </span>
             
@@ -676,7 +709,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" >
+        <li class="chapter " data-level="9.2" >
             
                 <span>
             
@@ -696,7 +729,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+        <li class="chapter " data-level="10.1" data-path="eclipse-plugin/installation.html">
             
                 <a href="eclipse-plugin/installation.html">
             
@@ -709,7 +742,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+        <li class="chapter " data-level="10.2" data-path="eclipse-plugin/usage.html">
             
                 <a href="eclipse-plugin/usage.html">
             
@@ -723,7 +756,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+        <li class="chapter " data-level="10.2.1" data-path="eclipse-plugin/usage-xml.html">
             
                 <a href="eclipse-plugin/usage-xml.html">
             
@@ -736,7 +769,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+        <li class="chapter " data-level="10.2.2" data-path="eclipse-plugin/usage-editor.html">
             
                 <a href="eclipse-plugin/usage-editor.html">
             
@@ -811,7 +844,7 @@ if you need more flexibility you can specify your own bean factories to
 instantiate the data objects.</p>
 </div>
 <div class="paragraph">
-<p>Your custom bean factory must implement the org.dozer.BeanFactory
+<p>Your custom bean factory must implement the <code>org.dozer.BeanFactory</code>
 interface. By default the Dozer mapping engine will use the destination
 object class name for the bean id when calling the factory.</p>
 </div>
@@ -819,18 +852,18 @@ object class name for the bean id when calling the factory.</p>
 <div class="content">
 <pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">BeanFactory</span> </span>{
   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">createBean</span><span class="hljs-params">(Object source, Class sourceClass,
-      String targetBeanId)</span></span>;
+      String targetBeanId, BeanContainer beanContainer)</span></span>;
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>Next, in your Dozer mapping file(s) you just need to specify a
-bean-factory xml attribute for any mappings that you want to use a
+<code>bean-factory</code> xml attribute for any mappings that you want to use a
 custom factory.</p>
 </div>
 <div class="paragraph">
-<p>In the following example, the SampleCustomBeanFactory will be used to
-create any new instances of the InsideTestObjectPrime java bean data
+<p>In the following example, the <code>SampleCustomBeanFactory</code> will be used to
+create any new instances of the <code>InsideTestObjectPrime</code> java bean data
 object.</p>
 </div>
 <div class="listingblock">
@@ -845,8 +878,8 @@ object.</p>
 </div>
 <div class="paragraph">
 <p>If your factory looks up beans based on a different id than class name,
-you can specifiy a factory-bean-id xml attribute. At runtime the
-specified factory-bean-id will be passed to the factory instead of class
+you can specify a <code>factory-bean-id</code> xml attribute. At runtime the
+specified <code>factory-bean-id</code> will be passed to the factory instead of class
 name.</p>
 </div>
 <div class="listingblock">
@@ -878,7 +911,7 @@ would be used for any mappings in that file.</p>
 </div>
 <div class="paragraph">
 <p>Bean factories can also be specified at the mapping level. The specified
-factory would be used for class-a and class-b.</p>
+factory would be used for <code>class-a</code> and <code>class-b</code>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -901,7 +934,6 @@ control techniques.</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>systempropertymapping1.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
@@ -923,7 +955,7 @@ control techniques.</p>
 </div>
 <div class="paragraph">
 <p>By defining your factories as Spring beans you can then inject them into
-the DozerBeanMapper class.</p>
+the <code>Mapper</code> instance.</p>
 </div>
 </div>
 </div>
@@ -970,7 +1002,7 @@ the DozerBeanMapper class.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Custom Bean Factories","level":"4.2","depth":1,"next":{"title":"Custom Create Methods","level":"4.3","depth":1,"path":"documentation/customCreateMethod.adoc","ref":"documentation/customCreateMethod.adoc","articles":[]},"previous":{"title":"Custom Converters","level":"4.1","depth":1,"path":"documentation/customconverter.adoc","ref":"documentation/customconverter.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/custombeanfactories.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Custom Bean Factories","level":"4.2","depth":1,"next":{"title":"Custom Create Methods","level":"4.3","depth":1,"path":"documentation/customCreateMethod.adoc","ref":"documentation/customCreateMethod.adoc","articles":[]},"previous":{"title":"Custom Converters","level":"4.1","depth":1,"path":"documentation/customconverter.adoc","ref":"documentation/customconverter.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/custombeanfactories.adoc","mtime":"2017-06-20T07:07:08.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

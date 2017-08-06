@@ -659,16 +659,49 @@
 
     
         
+        <li class="header">Migration</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../migration/v5-to-v6.html">
+            
+                <a href="../migration/v5-to-v6.html">
+            
+                    
+                    v5 to v6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../migration/v6-to-v61.html">
+            
+                <a href="../migration/v6-to-v61.html">
+            
+                    
+                    v6.0.0 to v6.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
         <li class="header">Schema</li>
         
         
     
-        <li class="chapter " data-level="8.1" >
+        <li class="chapter " data-level="9.1" >
             
                 <span>
             
                     
-                    schema/beanmapping.xsd[Dozer Mapping XSD]
+                    schema/bean-mapping.xsd[Dozer Mapping XSD]
             
                 </span>
             
@@ -676,7 +709,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.2" >
+        <li class="chapter " data-level="9.2" >
             
                 <span>
             
@@ -696,7 +729,7 @@
         
         
     
-        <li class="chapter " data-level="9.1" data-path="eclipse-plugin/installation.html">
+        <li class="chapter " data-level="10.1" data-path="eclipse-plugin/installation.html">
             
                 <a href="eclipse-plugin/installation.html">
             
@@ -709,7 +742,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2" data-path="eclipse-plugin/usage.html">
+        <li class="chapter " data-level="10.2" data-path="eclipse-plugin/usage.html">
             
                 <a href="eclipse-plugin/usage.html">
             
@@ -723,7 +756,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="9.2.1" data-path="eclipse-plugin/usage-xml.html">
+        <li class="chapter " data-level="10.2.1" data-path="eclipse-plugin/usage-xml.html">
             
                 <a href="eclipse-plugin/usage-xml.html">
             
@@ -736,7 +769,7 @@
             
         </li>
     
-        <li class="chapter " data-level="9.2.2" data-path="eclipse-plugin/usage-editor.html">
+        <li class="chapter " data-level="10.2.2" data-path="eclipse-plugin/usage-editor.html">
             
                 <a href="eclipse-plugin/usage-editor.html">
             
@@ -812,7 +845,7 @@ After mapping the two objects it then returns the destination object with all of
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = <span class="hljs-keyword">new</span> DozerBeanMapper();
+<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.createDefault();
 DestinationObject destObject = mapper.map(sourceObject, DestinationObject.class);</code></pre>
 </div>
 </div>
@@ -846,8 +879,8 @@ Implicit/Explicit mapping switch is called <em>&quot;wildcard&quot;</em> in Doze
 <h3 id="_injecting_custom_mapping_files">Injecting Custom Mapping Files</h3>
 <div class="paragraph">
 <p>The Dozer mapping xml file(s) define any custom mappings that can&#x2019;t be automatically performed by the Dozer mapping engine.
-Any custom Dozer mapping files need to be injected into the Mapper implementation(org.dozer.DozerBeanMapper).
-Both setter-based andconstructor-based injection are supported.</p>
+Any custom Dozer mapping files need to be injected into the <code>Mapper</code> implementation
+via <code>DozerBeanMapperBuilder#withMappingFiles(..)</code> method.</p>
 </div>
 <div class="paragraph">
 <p>Preferably, you will be using an IOC framework such as Spring for these Dozer injection requirements.
@@ -859,12 +892,9 @@ If you are using the mapper this way just wrap it using the singleton pattern.</
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">List myMappingFiles = <span class="hljs-keyword">new</span> ArrayList();
-myMappingFiles.add(<span class="hljs-string">&quot;dozerBeanMapping.xml&quot;</span>);
-myMappingFiles.add(<span class="hljs-string">&quot;someOtherDozerBeanMappings.xml&quot;</span>);
-
-DozerBeanMapper mapper = <span class="hljs-keyword">new</span> DozerBeanMapper();
-mapper.setMappingFiles(myMappingFiles);
+<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.create()
+        .withMappingFiles(<span class="hljs-string">&quot;dozerBeanMapping.xml&quot;</span>, <span class="hljs-string">&quot;someOtherDozerBeanMappings.xml&quot;</span>)
+        .build();
 
 DestinationObject destObject = mapper.map(sourceObject, DestinationObject.class);</code></pre>
 </div>
@@ -886,50 +916,6 @@ DestinationObject destObject = mapper.map(sourceObject, DestinationObject.class)
         <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_dozer_bean_mapper_singleton_wrapper">Dozer Bean Mapper Singleton Wrapper</h3>
-<div class="paragraph">
-<p>There is one way to configure the DozerBeanMapperSingletonWrapper to use
-your custom mapping file.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Using one mapping file:</strong> A file called dozerBeanMapping.xml file will
-be loaded if it is in your Classpath. You can find a sample of this file
-in the \{dozer.home}/mappings directory.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The mapping file defines all of the relationships between Java classes
-and their attributes. The <a href="mappings.html">Custom Mappings</a> section
-details the custom XML mapping options that are available.</p>
-</div>
-<div class="paragraph">
-<p>The following example show how to use the
-DozerBeanMapperSingletonWrapper. Dozer has a method called map which
-takes a source object and either a destination object or destination
-object class type. After mapping the two objects it then returns the
-destination object with all of its mapped fields.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperSingletonWrapper.getInstance();
-DestinationObject destObject = mapper.map(sourceObject, DestinationObject.class);</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperSingletonWrapper.getInstance();
-DestinationObject destObject = <span class="hljs-keyword">new</span> DestinationObject();
-mapper.map(sourceObject, destObject);</code></pre>
 </div>
 </div>
 </div>
@@ -977,7 +963,7 @@ mapper.map(sourceObject, destObject);</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.3.1","depth":2,"next":{"title":"Mappings via XML","level":"1.4","depth":1,"path":"documentation/mappings.adoc","ref":"documentation/mappings.adoc","articles":[{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]}]},"previous":{"title":"Getting Started","level":"1.3","depth":1,"path":"documentation/gettingstarted.adoc","ref":"documentation/gettingstarted.adoc","articles":[{"title":"Usage","level":"1.3.1","depth":2,"path":"documentation/usage.adoc","ref":"documentation/usage.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/usage.adoc","mtime":"2017-05-24T18:35:43.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-05-29T10:20:29.540Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Usage","level":"1.3.1","depth":2,"next":{"title":"Mappings via XML","level":"1.4","depth":1,"path":"documentation/mappings.adoc","ref":"documentation/mappings.adoc","articles":[{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]}]},"previous":{"title":"Getting Started","level":"1.3","depth":1,"path":"documentation/gettingstarted.adoc","ref":"documentation/gettingstarted.adoc","articles":[{"title":"Usage","level":"1.3.1","depth":2,"path":"documentation/usage.adoc","ref":"documentation/usage.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/usage.adoc","mtime":"2017-06-20T07:09:42.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
