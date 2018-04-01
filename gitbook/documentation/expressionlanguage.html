@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="xmlConfiguration.html">
             
-                <a href="advancedConfiguration.html">
+                <a href="xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="apiConfiguration.html">
             
-                <a href="globalConfiguration.html">
+                <a href="apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
-            
-                <a href="configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
-            
-                <a href="jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="metadata.html">
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
             
                 <a href="metadata.html">
             
@@ -838,49 +825,65 @@
 <div class="sect2">
 <h3 id="_usage">Usage</h3>
 <div class="paragraph">
-<p>Dozer provides optional support for standard java expression language
-(javax.el).</p>
+<p>Dozer provides optional support for standard java expression language (javax.el).</p>
 </div>
 <div class="paragraph">
-<p>Current support for expressions is start-up time only. Expressions are
-<strong>not</strong> resolved during each mapping, but rather during Xml mapping file
-loading procedure. Each attribute or node value can contain a valid EL
-expression $\{}.</p>
+<p>Current support for expressions is start-up time only.
+Expressions are <strong>not</strong> resolved during each mapping, but rather during mapping loading time.
+Each attribute or node value can contain a valid EL expression ${}.</p>
 </div>
 <div class="paragraph">
-<p>Dozer supports any EL implementation written against javax.el standard
-API. Functionality is tested with <a href="http://juel.sourceforge.net/" target="_blank">JUEL</a>
-internally, but other EL providers should be working as well.</p>
+<p>Dozer supports any EL implementation written against javax.el standard API.
+Functionality is tested with &apos;glassfish&apos; internally, but other EL providers should work as well.</p>
 </div>
 <div class="paragraph">
-<p>You can define global variables for the mapper in <strong>variables</strong>
-configuration block.</p>
+<p>You can define global variables for the mapper in <strong>variables</strong> configuration block.</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">variables</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;type_name&quot;</span>&gt;</span>org.dozer.sample.MyType
-            <span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">variables</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>${type_name}<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
+   <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">variables</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">variable</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;type_name&quot;</span>&gt;</span>org.dozer.sample.MyType<span class="hljs-tag">&lt;/<span class="hljs-name">variable</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">variables</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>${type_name}<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.sample.OtherType<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_enabling">Enabling</h3>
 <div class="paragraph">
-<p>EL support is an optional feature. If it is not enable it does not
-affect mapping performance neither it requires additional Jar
-dependencies to your project.</p>
+<p>EL support is an optional feature.
+To enable it, you must add the below dependencies to your classpath:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>javax.el<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>javax.el-api<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.glassfish<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>javax.el<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>In order to enable EL expression execution <em>dozer.el.enabled</em> parameter
-should be set to true.</p>
+<p>It is this enabled on the Mapper by the below fluent construct:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.create()
+        .withMappingFiles(mappingFiles)
+        .withELEngine(<span class="hljs-keyword">new</span> DefaultELEngine())
+        .build();</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -927,7 +930,7 @@ should be set to true.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Expression Language","level":"4.5","depth":1,"next":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"previous":{"title":"Custom get() set() Methods","level":"4.4","depth":1,"path":"documentation/custommethods.adoc","ref":"documentation/custommethods.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/expressionlanguage.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Expression Language","level":"4.5","depth":1,"next":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"previous":{"title":"Custom get() set() Methods","level":"4.4","depth":1,"path":"documentation/custommethods.adoc","ref":"documentation/custommethods.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/expressionlanguage.adoc","mtime":"2017-11-20T19:11:04.864Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

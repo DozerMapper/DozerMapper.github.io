@@ -57,7 +57,7 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="../advancedConfiguration.html" />
+    <link rel="next" href="../xmlConfiguration.html" />
     
     
     <link rel="prev" href="../apimappings.html" />
@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="../xmlConfiguration.html">
             
-                <a href="../advancedConfiguration.html">
+                <a href="../xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="../apiConfiguration.html">
             
-                <a href="../globalConfiguration.html">
+                <a href="../apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../immutable.html">
+            
+                <a href="../immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="statistics.html">
-            
-                <a href="statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="../jmxintegration.html">
-            
-                <a href="../jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="../metadata.html">
+        <li class="chapter " data-level="5.3" data-path="../metadata.html">
             
                 <a href="../metadata.html">
             
@@ -871,20 +858,6 @@ dozer.configuration system property. ex)
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.statistics.enabled</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether Dozer collects runtime mapping statistics. Note that statistics gathering imposes certain performance overhead. It is not recommended to enable this option in production settings under heavy load.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.autoregister.jmx.beans</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether Dozer will auto register it&#x2019;s JMX beans with the PlatformMDBServer on startup.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dozer.el.enabled</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies whether during Xml mappings parsing Dozer will recognize EL expressions.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">true</p></td>
@@ -892,28 +865,28 @@ dozer.configuration system property. ex)
 <td class="tableblock halign-left valign-top"><p class="tableblock">false</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.cache.converter.by.dest.type.maxsize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.cache.converter-by-dest-type-maxsize</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the max size for one of Dozers internal caches.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 - Long.MAX_VALUE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.cache.super.type.maxsize</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.cache.super-type-maxsize</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the max size for one of Dozers internal caches</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">0 - Long.MAX_VALUE</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">10000</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">org.dozer.util.DozerProxyResolver</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.beans.proxy-resolver-bean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies implementation of DozerProxyResolver to be used</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Valid class name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Default implementation</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">org.dozer.util.DozerClassLoader</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dozer.beans.class-loader-bean</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Specifies implementation of DozerClassLoader to be used</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Valid class name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Default implementation</p></td>
@@ -954,7 +927,7 @@ dozer.configuration system property. ex)
                 </a>
                 
                 
-                <a href="../advancedConfiguration.html" class="navigation navigation-next " aria-label="Next page: Advanced Configuration">
+                <a href="../xmlConfiguration.html" class="navigation navigation-next " aria-label="Next page: Configuration via XML">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -965,7 +938,7 @@ dozer.configuration system property. ex)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.5","depth":1,"next":{"title":"Advanced Configuration","level":"1.5.1","depth":2,"path":"documentation/advancedConfiguration.adoc","ref":"documentation/advancedConfiguration.adoc","articles":[]},"previous":{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/configuration/configuration.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configuration","level":"1.5","depth":1,"next":{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},"previous":{"title":"via API","level":"1.4.2","depth":2,"path":"documentation/apimappings.adoc","ref":"documentation/apimappings.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/configuration/configuration.adoc","mtime":"2017-11-20T19:11:04.859Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

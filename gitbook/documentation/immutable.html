@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Global Configuration · GitBook</title>
+        <title>Mapping immutable types · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="mappingclasses.html" />
+    <link rel="next" href="enum.html" />
     
     
-    <link rel="prev" href="advancedConfiguration.html" />
+    <link rel="prev" href="advancedproperty.html" />
     
 
     </head>
@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="xmlConfiguration.html">
             
-                <a href="advancedConfiguration.html">
+                <a href="xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.5.2" data-path="globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="apiConfiguration.html">
             
-                <a href="globalConfiguration.html">
+                <a href="apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
-            
-                <a href="configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
-            
-                <a href="jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="metadata.html">
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
             
                 <a href="metadata.html">
             
@@ -817,7 +804,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Global Configuration</a>
+        <a href=".." >Mapping immutable types</a>
     </h1>
 </div>
 
@@ -833,118 +820,25 @@
                                 <section class="normal markdown-section">
                                 
                                 <div class="sect1">
-<h2 id="_global_configuration">Global Configuration</h2>
+<h2 id="_mapping_immutable_types">Mapping immutable types</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The configuration block is used to set the global default settings.
-Also, any Custom Converters are defined in this section. The
-configuration block is entirely &quot;optional&quot;.</p>
-</div>
-<div class="paragraph">
-<p>Dozer supports the ability to have multiple mapping files, but only one
-global configuration across the multiple mapping files. We recommend
-having a separate mapping xml file for specifying the single global
-configuration. <strong>Implicit mappings will inherit the default values for
-configuration.</strong></p>
-</div>
-<div class="paragraph">
-<p>The following is the sample configuration block:</p>
+<p>You can create objects when constructor is not available, or when
+there is no no-args constructor in the class. Feature is designed
+for mapping immutable types. To use it, at the mapping level add
+an option to skip the constructor, then at the field level choose
+to inject the value directly to the field, skipping the setter.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">date-format</span>&gt;</span>MM/dd/yyyy HH:mm<span class="hljs-tag">&lt;/<span class="hljs-name">date-format</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">stop-on-errors</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">stop-on-errors</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">trim-strings</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">trim-strings</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
-        <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestCustomConverterObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>another.type.to.Associate<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overriding_wildcards">Overriding Wildcards</h3>
-<div class="paragraph">
-<p>Each individual mapping section can set its own wildcard policy even if
-there is a global wildcard policy defined using the configuration block.
-For example, the following mapping does not allow wildcards:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnyExternalModelClass<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">skip-constructor</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>org.dozer.vo.ImmutableModelClass<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>externalModelField<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">is-accessible</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>ourFinalField<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overriding_date_format">Overriding Date Format</h3>
-<div class="paragraph">
-<p>The same is true for date format values. Each individual mapping section
-can set its own date format rules. For example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level date format default  --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">date-format</span>=<span class="hljs-string">&quot;MM-dd-yyyy HH:mm:ss&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overriding_error_handling">Overriding Error Handling</h3>
-<div class="paragraph">
-<p>You can override the error handling policy for a particular mapping. For
-example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level defaults --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">stop-on-errors</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_overriding_trim_strings_policy">Overriding Trim Strings Policy</h3>
-<div class="paragraph">
-<p>You can override the trim strings policy for a particular mapping. For
-example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-comment">&lt;!-- Override top level defaults --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">trim-strings</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
 </div>
 </div>
 </div>
@@ -975,12 +869,12 @@ example:</p>
 
             
                 
-                <a href="advancedConfiguration.html" class="navigation navigation-prev " aria-label="Previous page: Advanced Configuration">
+                <a href="advancedproperty.html" class="navigation navigation-prev " aria-label="Previous page: Assembler Pattern">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="mappingclasses.html" class="navigation navigation-next " aria-label="Next page: Mapping Classes">
+                <a href="enum.html" class="navigation navigation-next " aria-label="Next page: Enums">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -991,7 +885,7 @@ example:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Global Configuration","level":"1.5.2","depth":2,"next":{"title":"Mapping Classes","level":"2.1","depth":1,"path":"documentation/mappingclasses.adoc","ref":"documentation/mappingclasses.adoc","articles":[]},"previous":{"title":"Advanced Configuration","level":"1.5.1","depth":2,"path":"documentation/advancedConfiguration.adoc","ref":"documentation/advancedConfiguration.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/globalConfiguration.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mapping immutable types","level":"2.11","depth":1,"next":{"title":"Enums","level":"3.1","depth":1,"path":"documentation/enum.adoc","ref":"documentation/enum.adoc","articles":[]},"previous":{"title":"Assembler Pattern","level":"2.10","depth":1,"path":"documentation/advancedproperty.adoc","ref":"documentation/advancedproperty.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/immutable.adoc","mtime":"2018-04-01T15:14:22.136Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

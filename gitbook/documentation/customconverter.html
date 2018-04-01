@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="xmlConfiguration.html">
             
-                <a href="advancedConfiguration.html">
+                <a href="xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="apiConfiguration.html">
             
-                <a href="globalConfiguration.html">
+                <a href="apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
-            
-                <a href="configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
-            
-                <a href="jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="metadata.html">
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
             
                 <a href="metadata.html">
             
@@ -954,33 +941,41 @@ implementation.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestCustomConverter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CustomConverter</span> </span>{
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> org.dozer.CustomConverter;
+<span class="hljs-keyword">import</span> org.dozer.MappingException;
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object destination, Object source,
-      Class destClass, Class sourceClass)</span> </span>{
-    <span class="hljs-keyword">if</span> (source == <span class="hljs-keyword">null</span>) {
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestCustomConverter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">CustomConverter</span> </span>{
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object existingDestinationFieldValue, Object sourceFieldValue, Class&lt;?&gt; destinationClass, Class&lt;?&gt; sourceClass)</span> </span>{
+        <span class="hljs-keyword">if</span> (sourceFieldValue == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+        }
+
+        CustomDoubleObject dest;
+        <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> Double) {
+            <span class="hljs-comment">// check to see if the object already exists</span>
+            <span class="hljs-keyword">if</span> (destination == <span class="hljs-keyword">null</span>) {
+                dest = <span class="hljs-keyword">new</span> CustomDoubleObject();
+            } <span class="hljs-keyword">else</span> {
+                dest = (CustomDoubleObject)destination;
+            }
+
+            dest.setTheDouble(((Double)source).doubleValue());
+
+            <span class="hljs-keyword">return</span> dest;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> CustomDoubleObject) {
+            <span class="hljs-keyword">double</span> sourceObj = ((CustomDoubleObject)source).getTheDouble();
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Double(sourceObj);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MappingException(<span class="hljs-string">&quot;Converter TestCustomConverter &quot;</span>
+                                       + <span class="hljs-string">&quot;used incorrectly. Arguments passed in were:&quot;</span>
+                                       + destination
+                                       + <span class="hljs-string">&quot; and &quot;</span>
+                                       + source);
+        }
     }
-    CustomDoubleObject dest = <span class="hljs-keyword">null</span>;
-    <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> Double) {
-      <span class="hljs-comment">// check to see if the object already exists</span>
-      <span class="hljs-keyword">if</span> (destination == <span class="hljs-keyword">null</span>) {
-        dest = <span class="hljs-keyword">new</span> CustomDoubleObject();
-      } <span class="hljs-keyword">else</span> {
-        dest = (CustomDoubleObject) destination;
-      }
-      dest.setTheDouble(((Double) source).doubleValue());
-      <span class="hljs-keyword">return</span> dest;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (source <span class="hljs-keyword">instanceof</span> CustomDoubleObject) {
-      <span class="hljs-keyword">double</span> sourceObj =
-        ((CustomDoubleObject) source).getTheDouble();
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Double(sourceObj);
-    } <span class="hljs-keyword">else</span> {
-      <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MappingException(<span class="hljs-string">&quot;Converter TestCustomConverter &quot;</span>
-          + <span class="hljs-string">&quot;used incorrectly. Arguments passed in were:&quot;</span>
-          + destination + <span class="hljs-string">&quot; and &quot;</span> + source);
-    }
-  }</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1079,23 +1074,39 @@ combinations is too high to do simple Custom Converter subclassing.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MathOperationConverter</span>
-    <span class="hljs-keyword">implements</span> <span class="hljs-title">ConfigurableCustomConverter</span> </span>{
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> org.dozer.ConfigurableCustomConverter;
+<span class="hljs-keyword">import</span> org.dozer.MappingException;
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object destinationFieldValue,
-                        Object sourceFieldValue,
-                        Class destinationClass,
-                        Class sourceClass, String param)</span> </span>{
-    Integer source = (Integer) sourceFieldValue;
-    Integer destination = (Integer) destinationFieldValue;
-    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;+&quot;</span>.equals(param)) {
-      <span class="hljs-keyword">return</span> destination.intValue + source.intValue();
-    }
-    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;-&quot;</span>.equals(param)) {
-      <span class="hljs-keyword">return</span> destination.intValue - source.intValue();
-    }
-  }
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MathOperationConverter</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ConfigurableCustomConverter</span> </span>{
 
+    <span class="hljs-keyword">private</span> String parameter;
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setParameter</span><span class="hljs-params">(String parameter)</span> </span>{
+        <span class="hljs-keyword">this</span>.parameter = parameter;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">convert</span><span class="hljs-params">(Object existingDestinationFieldValue, Object sourceFieldValue, Class&lt;?&gt; destinationClass, Class&lt;?&gt; sourceClass)</span> </span>{
+        Integer source = (Integer)sourceFieldValue;
+        Integer destination = (Integer)existingDestinationFieldValue;
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;+&quot;</span>.equals(parameter)) {
+            <span class="hljs-keyword">return</span> destination.intValue + source.intValue();
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;-&quot;</span>.equals(parameter)) {
+            <span class="hljs-keyword">return</span> destination.intValue - source.intValue();
+        }
+
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> MappingException(<span class="hljs-string">&quot;Converter MathOperationConverter &quot;</span>
+                                   + <span class="hljs-string">&quot;used incorrectly. Arguments passed in were:&quot;</span>
+                                   + destination
+                                   + <span class="hljs-string">&quot;, &quot;</span>
+                                   + source
+                                   + <span class="hljs-string">&quot; and &quot;</span>
+                                   + parameter);
+    }
 }</code></pre>
 </div>
 </div>
@@ -1116,31 +1127,33 @@ demonstrates simple, yet working converter using new API.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewDozerConverter</span>
-    <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Boolean</span>&gt; </span>{
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> org.dozer.DozerConverter;
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NewDozerConverter</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">super</span>(String.class, Boolean.class);
-  }
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NewDozerConverter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Boolean</span>&gt; </span>{
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">convertTo</span><span class="hljs-params">(String source, Boolean destination)</span> </span>{
-    <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;yes&quot;</span>.equals(source)) {
-      <span class="hljs-keyword">return</span> Boolean.TRUE;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;no&quot;</span>.equals(source)) {
-      <span class="hljs-keyword">return</span> Boolean.FALSE;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NewDozerConverter</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>(String.class, Boolean.class);
     }
-    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
-  }
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">convertFrom</span><span class="hljs-params">(Boolean source, String destination)</span> </span>{
-    <span class="hljs-keyword">if</span> (Boolean.TRUE.equals(source)) {
-      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;yes&quot;</span>;
-    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Boolean.FALSE.equals(source)) {
-      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;no&quot;</span>;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Boolean <span class="hljs-title">convertTo</span><span class="hljs-params">(String source, Boolean destination)</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;yes&quot;</span>.equals(source)) {
+            <span class="hljs-keyword">return</span> Boolean.TRUE;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-string">&quot;no&quot;</span>.equals(source)) {
+            <span class="hljs-keyword">return</span> Boolean.FALSE;
+        }
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
     }
-    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
-  }
 
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">convertFrom</span><span class="hljs-params">(Boolean source, String destination)</span> </span>{
+        <span class="hljs-keyword">if</span> (Boolean.TRUE.equals(source)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;yes&quot;</span>;
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (Boolean.FALSE.equals(source)) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;no&quot;</span>;
+        }
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Unknown value!&quot;</span>);
+    }
 }</code></pre>
 </div>
 </div>
@@ -1162,30 +1175,42 @@ custom converter.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Converter</span>
-    <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span> &lt;<span class="hljs-title">List</span>, <span class="hljs-title">Map</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">MapperAware</span> </span>{
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> java.util.HashMap;
+<span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.Map;
 
-  <span class="hljs-keyword">private</span> Mapper mapper;
+<span class="hljs-keyword">import</span> org.dozer.DozerConverter;
+<span class="hljs-keyword">import</span> org.dozer.Mapper;
+<span class="hljs-keyword">import</span> org.dozer.MapperAware;
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Converter</span><span class="hljs-params">()</span> </span>{
-    <span class="hljs-keyword">super</span>(List.class, Map.class);
-  }
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Converter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DozerConverter</span>&lt;<span class="hljs-title">List</span>, <span class="hljs-title">Map</span>&gt; <span class="hljs-keyword">implements</span> <span class="hljs-title">MapperAware</span> </span>{
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> Map <span class="hljs-title">convertTo</span><span class="hljs-params">(List source, Map destination)</span> </span>{
-    Map originalToMapped = <span class="hljs-keyword">new</span> HashMap();
-    <span class="hljs-keyword">for</span> (Source item : source) {
-      Target mappedItem = mapper.map(item, Target.class);
-      originalToMapped.put(item, mappedItem);
+    <span class="hljs-keyword">private</span> Mapper mapper;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Converter</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">super</span>(List.class, Map.class);
     }
-    <span class="hljs-keyword">return</span> originalToMapped;
-  }
 
-&lt;...&gt;
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMapper</span><span class="hljs-params">(Mapper mapper)</span> </span>{
+        <span class="hljs-keyword">this</span>.mapper = mapper;
+    }
 
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMapper</span><span class="hljs-params">(Mapper mapper)</span> </span>{
-    <span class="hljs-keyword">this</span>.mapper = mapper;
-  }
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Map <span class="hljs-title">convertTo</span><span class="hljs-params">(List source, Map destination)</span> </span>{
+        Map originalToMapped = <span class="hljs-keyword">new</span> HashMap();
+        <span class="hljs-keyword">for</span> (Source item : source) {
+            Target mappedItem = mapper.map(item, Target.class);
 
+            originalToMapped.put(item, mappedItem);
+        }
+        <span class="hljs-keyword">return</span> originalToMapped;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> List <span class="hljs-title">convertFrom</span><span class="hljs-params">(Map source, List destination)</span> </span>{
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalStateException(<span class="hljs-string">&quot;Not implemented&quot;</span>);
+    }
 }</code></pre>
 </div>
 </div>
@@ -1234,7 +1259,7 @@ custom converter.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Custom Converters","level":"4.1","depth":1,"next":{"title":"Custom Bean Factories","level":"4.2","depth":1,"path":"documentation/custombeanfactories.adoc","ref":"documentation/custombeanfactories.adoc","articles":[]},"previous":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/customconverter.adoc","mtime":"2017-06-20T07:09:42.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Custom Converters","level":"4.1","depth":1,"next":{"title":"Custom Bean Factories","level":"4.2","depth":1,"path":"documentation/custombeanfactories.adoc","ref":"documentation/custombeanfactories.adoc","articles":[]},"previous":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/customconverter.adoc","mtime":"2017-11-20T19:11:04.861Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
