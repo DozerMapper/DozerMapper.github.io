@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="xmlConfiguration.html">
             
-                <a href="advancedConfiguration.html">
+                <a href="xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="apiConfiguration.html">
             
-                <a href="globalConfiguration.html">
+                <a href="apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
-            
-                <a href="configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="jmxintegration.html">
-            
-                <a href="jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="metadata.html">
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
             
                 <a href="metadata.html">
             
@@ -967,10 +954,6 @@ what type of data objects I want in the destination collection?</a></p>
 <p><a href="#bypass-null">How can I tell Dozer to bypass mapping null or empty
 string values?</a></p>
 </li>
-<li>
-<p><a href="#runtime-stats">How do I enable Dozer to collect runtime mapping
-statistics?</a></p>
-</li>
 </ul>
 </div>
 </div>
@@ -993,10 +976,6 @@ Singleton?</a></p>
 <li>
 <p><a href="#component-mappings">Is it better to have 1 large xml mapping file
 or to have multiple smaller mapping files?</a></p>
-</li>
-<li>
-<p><a href="#viewing-runtime-stats">What is the best way to view runtime
-mapping statistics?</a></p>
 </li>
 <li>
 <p><a href="#debugging-dozer">What are the best ways to debug Dozer?</a></p>
@@ -1162,19 +1141,6 @@ application to determine the actual performance costs within your
 system. You can decide for yourself whether those costs are acceptable
 in the context of the entire system.</p>
 </div>
-<div class="paragraph">
-<p>If you want to see actual Dozer runtime mapping statistics within the
-context of a system/application, you can enable Dozer statistics. This
-would be a good way to determine actual mapping times as a percentage of
-overall system performance. The best way to view the stats is via the
-Dozer JMX Beans. With the 3.2 release, these JMXBeans are auto
-registered with the platform mdb server. JConsole is a good way to
-easily view the MBeans.</p>
-</div>
-<div class="paragraph">
-<p>Based on our profiling numbers, the overhead of enabling statistics is
-roughly 3-5%.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="jdk-support">Which JDK versions are supported?</h3>
@@ -1191,9 +1157,9 @@ uploaded into the repository.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.dozer<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>${dozer.version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>{dozer-version}<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -1393,12 +1359,6 @@ the mapping or class level</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="runtime-stats">How do I enable Dozer to collect runtime mapping statistics?</h3>
-<div class="paragraph">
-<p>In your dozer.properties file set &quot;dozer.statistics.enabled=true&quot;</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="encapsulation">Should I encapsulate logic that copies data between objects?</h3>
 <div class="paragraph">
 <p>It is our opinion that you should. Regardless of whether you use Dozer
@@ -1533,14 +1493,6 @@ mapping file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-runtime-stats">What is the best way to view runtime mapping statistics?</h3>
-<div class="paragraph">
-<p>The best way to view the runtime stats is via the Dozer JMX Beans. These
-JMXBeans are auto registered with the platform mdb server at startup.
-JConsole is a good way to easily view the MBeans.</p>
-</div>
-</div>
-<div class="sect2">
 <h3 id="debugging-dozer">What are the best ways to debug Dozer?</h3>
 <div class="paragraph">
 <p>You can specify the -Ddozer.debug system property to view the one time
@@ -1554,9 +1506,6 @@ dozer: Using URL [file:/local/subversion_projects/dozer/trunk/target/test-classe
 dozer: Reading Dozer properties from URL[file:/local/subversion_projects/dozer/trunk/target/test-classes/dozer.properties]
 dozer: Finished configuring Dozer global properties
 dozer: Initializing Dozer. Version: ${project.version}, Thread Name:main
-dozer: Dozer JMX MBean [org.dozer.jmx:type=DozerStatisticsController] auto registered with the Platform MBeanServer
-dozer: Dozer JMX MBean [org.dozer.jmx:type=DozerAdminController] auto registered with the Platform MBeanServer
-dozer: Initializing a new instance of the dozer bean mapper.
 dozer: Initializing a new instance of the dozer bean mapper.
 dozer: Using the following xml files to load custom mappings for the bean mapper instance:[fieldAttributeMapping.xml]
 dozer: Trying to find xml mapping file: fieldAttributeMapping.xml
@@ -1667,7 +1616,7 @@ submit a support request. Please submit all requests via
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"7.1","depth":1,"next":{"title":"Examples","level":"7.2","depth":1,"path":"documentation/examples.adoc","ref":"documentation/examples.adoc","articles":[]},"previous":{"title":"JAXB and XMLBeans","level":"6.2","depth":1,"path":"documentation/xmlbeans.adoc","ref":"documentation/xmlbeans.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/faq.adoc","mtime":"2017-06-20T07:09:42.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"7.1","depth":1,"next":{"title":"Examples","level":"7.2","depth":1,"path":"documentation/examples.adoc","ref":"documentation/examples.adoc","articles":[]},"previous":{"title":"JAXB and XMLBeans","level":"6.2","depth":1,"path":"documentation/xmlbeans.adoc","ref":"documentation/xmlbeans.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/faq.adoc","mtime":"2018-04-01T15:12:50.203Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

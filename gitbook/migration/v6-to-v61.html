@@ -204,12 +204,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="../documentation/advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="../documentation/xmlConfiguration.html">
             
-                <a href="../documentation/advancedConfiguration.html">
+                <a href="../documentation/xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -217,12 +217,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="../documentation/globalConfiguration.html">
+        <li class="chapter " data-level="1.5.2" data-path="../documentation/apiConfiguration.html">
             
-                <a href="../documentation/globalConfiguration.html">
+                <a href="../documentation/apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -365,6 +365,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="../documentation/immutable.html">
+            
+                <a href="../documentation/immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -549,33 +562,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="../documentation/configuration/statistics.html">
-            
-                <a href="../documentation/configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="../documentation/jmxintegration.html">
-            
-                <a href="../documentation/jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="../documentation/metadata.html">
+        <li class="chapter " data-level="5.3" data-path="../documentation/metadata.html">
             
                 <a href="../documentation/metadata.html">
             
@@ -834,8 +821,7 @@
 <h2 id="_migration_from_v6_0_0_to_v6_1_0">Migration from v6.0.0 to v6.1.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><strong>STILL WORK IN PROGRESS - NOT RELEASED</strong>
-See <a href="https://github.com/DozerMapper/dozer/releases/tag/v6.1.0" target="_blank">for release notes</a>.</p>
+<p>See <a href="https://github.com/DozerMapper/dozer/releases/tag/6.1.0" target="_blank">for release notes</a>.</p>
 </div>
 <div class="sect2">
 <h3 id="_1_mapping_xml_xsd_changed">1. Mapping.xml XSD changed:</h3>
@@ -856,7 +842,7 @@ See <a href="https://github.com/DozerMapper/dozer/releases/tag/v6.1.0" target="_
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mappings</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping&quot;</span>
           <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
-          <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd&quot;</span>&gt;</span></code></pre>
+          <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping https://dozermapper.github.io/schema/bean-mapping.xsd&quot;</span>&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -885,7 +871,7 @@ See <a href="https://github.com/DozerMapper/dozer/releases/tag/v6.1.0" target="_
         <span class="hljs-attr">xmlns:dozer</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/dozer-spring&quot;</span>
         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;
            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-           http://dozermapper.github.io/schema/dozer-spring http://dozermapper.github.io/schema/dozer-spring.xsd&quot;</span>&gt;</span></code></pre>
+           http://dozermapper.github.io/schema/dozer-spring https://dozermapper.github.io/schema/dozer-spring.xsd&quot;</span>&gt;</span></code></pre>
 </div>
 </div>
 </div>
@@ -933,7 +919,7 @@ mapper.map(a, b);</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.createDefault();</code></pre>
+<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.buildDefault();</code></pre>
 </div>
 </div>
 </div>
@@ -1059,7 +1045,7 @@ org.dozer.jmx</code></pre>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v6.0.0 to v6.1.0","level":"8.2","depth":1,"next":{"title":"schema/bean-mapping.xsd[Dozer Mapping XSD]","level":"9.1","depth":1,"ref":"","articles":[]},"previous":{"title":"v5 to v6","level":"8.1","depth":1,"path":"migration/v5-to-v6.adoc","ref":"migration/v5-to-v6.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v6-to-v61.adoc","mtime":"2017-07-06T20:07:52.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v6.0.0 to v6.1.0","level":"8.2","depth":1,"next":{"title":"schema/bean-mapping.xsd[Dozer Mapping XSD]","level":"9.1","depth":1,"ref":"","articles":[]},"previous":{"title":"v5 to v6","level":"8.1","depth":1,"path":"migration/v5-to-v6.adoc","ref":"migration/v5-to-v6.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v6-to-v61.adoc","mtime":"2018-04-01T15:14:22.194Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

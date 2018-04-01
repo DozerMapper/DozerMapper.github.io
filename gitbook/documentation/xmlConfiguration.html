@@ -1,0 +1,1417 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Configuration via XML · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="apiConfiguration.html" />
+    
+    
+    <link rel="prev" href="configuration/configuration.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="whymap.html">
+            
+                <a href="whymap.html">
+            
+                    
+                    Why Map?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="gettingstarted.html">
+            
+                <a href="gettingstarted.html">
+            
+                    
+                    Getting Started
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="usage.html">
+            
+                <a href="usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="mappings.html">
+            
+                <a href="mappings.html">
+            
+                    
+                    Mappings via XML
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="annotations.html">
+            
+                <a href="annotations.html">
+            
+                    
+                    via Annotations
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="apimappings.html">
+            
+                <a href="apimappings.html">
+            
+                    
+                    via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="configuration/configuration.html">
+            
+                <a href="configuration/configuration.html">
+            
+                    
+                    Configuration
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.5.1" data-path="xmlConfiguration.html">
+            
+                <a href="xmlConfiguration.html">
+            
+                    
+                    Configuration via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="apiConfiguration.html">
+            
+                <a href="apiConfiguration.html">
+            
+                    
+                    Configuration via API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Dozer mapping concepts</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="mappingclasses.html">
+            
+                <a href="mappingclasses.html">
+            
+                    
+                    Mapping Classes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="simpleproperty.html">
+            
+                <a href="simpleproperty.html">
+            
+                    
+                    Basic Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="baseattributes.html">
+            
+                <a href="baseattributes.html">
+            
+                    
+                    Inheritance Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="contextmapping.html">
+            
+                <a href="contextmapping.html">
+            
+                    
+                    Context Based Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="oneway.html">
+            
+                <a href="oneway.html">
+            
+                    
+                    One-Way Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="copybyreference.html">
+            
+                <a href="copybyreference.html">
+            
+                    
+                    Copying By Object Reference
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="deepmapping.html">
+            
+                <a href="deepmapping.html">
+            
+                    
+                    Deep Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="indexmapping.html">
+            
+                <a href="indexmapping.html">
+            
+                    
+                    Indexed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.9" data-path="exclude.html">
+            
+                <a href="exclude.html">
+            
+                    
+                    Excluding Fields
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.10" data-path="advancedproperty.html">
+            
+                <a href="advancedproperty.html">
+            
+                    
+                    Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">How do i map a type of…​?</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="enum.html">
+            
+                <a href="enum.html">
+            
+                    
+                    Enums
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="stringtodatemapping.html">
+            
+                <a href="stringtodatemapping.html">
+            
+                    
+                    String to Date
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="collectionandarraymapping.html">
+            
+                <a href="collectionandarraymapping.html">
+            
+                    
+                    Collections and Arrays
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="mapbackedproperty.html">
+            
+                <a href="mapbackedproperty.html">
+            
+                    
+                    Map Backed Property Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="proxyhandling.html">
+            
+                <a href="proxyhandling.html">
+            
+                    
+                    Proxy Objects
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">What if i need to customise the mapping?</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="customconverter.html">
+            
+                <a href="customconverter.html">
+            
+                    
+                    Custom Converters
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="custombeanfactories.html">
+            
+                <a href="custombeanfactories.html">
+            
+                    
+                    Custom Bean Factories
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="customCreateMethod.html">
+            
+                <a href="customCreateMethod.html">
+            
+                    
+                    Custom Create Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="custommethods.html">
+            
+                <a href="custommethods.html">
+            
+                    
+                    Custom get() set() Methods
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="expressionlanguage.html">
+            
+                <a href="expressionlanguage.html">
+            
+                    
+                    Expression Language
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Extra</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="configuration/logging.html">
+            
+                <a href="configuration/logging.html">
+            
+                    
+                    Logging
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="events.html">
+            
+                <a href="events.html">
+            
+                    
+                    Event Listening
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
+            
+                <a href="metadata.html">
+            
+                    
+                    Metadata Query Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3rd Party</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" data-path="springintegration.html">
+            
+                <a href="springintegration.html">
+            
+                    
+                    Spring Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+            
+                <a href="xmlbeans.html">
+            
+                    
+                    JAXB and XMLBeans
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Other</li>
+        
+        
+    
+        <li class="chapter " data-level="7.1" data-path="faq.html">
+            
+                <a href="faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="examples.html">
+            
+                <a href="examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Migration</li>
+        
+        
+    
+        <li class="chapter " data-level="8.1" data-path="../migration/v5-to-v6.html">
+            
+                <a href="../migration/v5-to-v6.html">
+            
+                    
+                    v5 to v6
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="../migration/v6-to-v61.html">
+            
+                <a href="../migration/v6-to-v61.html">
+            
+                    
+                    v6.0.0 to v6.1.0
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Schema</li>
+        
+        
+    
+        <li class="chapter " data-level="9.1" >
+            
+                <span>
+            
+                    
+                    schema/bean-mapping.xsd[Dozer Mapping XSD]
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" >
+            
+                <span>
+            
+                    
+                    dozer-user-guide.pdf[User’s Guide PDF]
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">Eclipse Plugin</li>
+        
+        
+    
+        <li class="chapter " data-level="10.1" data-path="eclipse-plugin/installation.html">
+            
+                <a href="eclipse-plugin/installation.html">
+            
+                    
+                    Installation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="eclipse-plugin/usage.html">
+            
+                <a href="eclipse-plugin/usage.html">
+            
+                    
+                    Usage
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.2.1" data-path="eclipse-plugin/usage-xml.html">
+            
+                <a href="eclipse-plugin/usage-xml.html">
+            
+                    
+                    via XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2.2" data-path="eclipse-plugin/usage-editor.html">
+            
+                <a href="eclipse-plugin/usage-editor.html">
+            
+                    
+                    via Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Configuration via XML</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div class="sect1">
+<h2 id="_configuration_via_xml">Configuration via XML</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The majority of Dozer&#x2019;s behaviour can be configured from within XML mapping
+files. Settings can appear inside five different scopes which affect the
+elements they are applied to: Global, per class mapping, at individual class
+level, per field mapping, and at individual field level.</p>
+</div>
+<div class="sect2">
+<h3 id="_configuration_scopes">Configuration Scopes</h3>
+<div class="sect3">
+<h4 id="_global_scope">Global Scope</h4>
+<div class="paragraph">
+<p>The configuration block is used to set the global default settings.
+Also, any Custom Converters are defined in this section. The
+configuration block is entirely &quot;optional&quot;.</p>
+</div>
+<div class="paragraph">
+<p>Dozer supports the ability to have multiple mapping files. Each of these
+mapping files can have their own configuration block. A mapping will
+inherit its configuration from the mapping file that it is stored in.
+<strong>Implicit mappings will inherit the default values for configuration.</strong></p>
+</div>
+<div class="paragraph">
+<p>The following is the sample configuration block from the example
+mappings file:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">date-format</span>&gt;</span>MM/dd/yyyy HH:mm<span class="hljs-tag">&lt;/<span class="hljs-name">date-format</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stop-on-errors</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">stop-on-errors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestCustomConverterObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>another.type.to.Associate<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All global settings appear as separate XML tags containing their value.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_per_class_mapping">Per Class Mapping</h4>
+<div class="paragraph">
+<p>Global settings (or their defaults) can be overridden at the individual
+mapping level. Here, configuration values are set using name=&quot;value&quot;
+attributes. They will affect all mapping operations between the two
+classes.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">date-format</span>=<span class="hljs-string">&quot;MM/dd/yyyy HH:mm&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_at_individual_class_level">At Individual Class Level</h4>
+<div class="paragraph">
+<p>Sometimes, you may want to apply a setting only to one of the two classes.
+This can be achieved by placing the attribute inside the <code>class-a</code> or <code>class-b</code>
+tag:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span> <span class="hljs-attr">is-accessible</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_per_field_mapping">Per Field Mapping</h4>
+<div class="paragraph">
+<p>Likewise, you can change the mapping behaviour for specific field pairs:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">remove-orphans</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_at_individual_field_level">At Individual Field Level</h4>
+<div class="paragraph">
+<p>Finally, some settings can be applied to a single field:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">get-method</span>=<span class="hljs-string">&quot;getTheAttribute&quot;</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_available_configuration_settings">Available Configuration Settings</h3>
+<div class="paragraph">
+<p><a id="label-config-options"></a>The following table lists the available configuration options and
+mapping directives, in which scopes they can appear, and the section
+of the manual containing more information:</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Name</th>
+<th class="tableblock halign-left valign-top">Global</th>
+<th class="tableblock halign-left valign-top">Class Mapping</th>
+<th class="tableblock halign-left valign-top">Single Class</th>
+<th class="tableblock halign-left valign-top">Field Mapping</th>
+<th class="tableblock halign-left valign-top">Single Field</th>
+<th class="tableblock halign-left valign-top">Manual Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">allowed-exceptions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom-converter</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="customconverter.html">Custom Converters</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom-converter-id</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="customconverter.html">Custom Converters</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">custom-converter-param</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="customconverter.html">Custom Converters</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copy-by-reference</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="copybyreference.html">Copy By Reference</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copy-by-references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="copybyreference.html">Copy By Reference</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create-method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="customCreateMethod.html">Custom Create Method</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">bean-factory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="custombeanfactories.html">Custom Bean Factories</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date-format</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="stringtodatemapping.html">String to Date Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">factory-bean-id</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="custombeanfactories.html">Custom Bean Factories</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">get-method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="custommethods.html">Custom Methods</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">is-accessible</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="immutable.html">Mapping immutable types</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mapbackedproperty.html">Map Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map-empty-string</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="exclude.html">Excluding Fields</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map-id</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="contextmapping.html">Context Based Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map-null</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="exclude.html">Excluding Fields</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map-set-method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mapbackedproperty.html">Map Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">map-get-method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="mapbackedproperty.html">Map Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">relationship-type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="collectionandarraymapping.html">Collection Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove-orphans</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="collectionandarraymapping.html">Collection Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set-method</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="custommethods.html">Custom Methods</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">skip-constructor</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="immutable.html">Mapping immutable types</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">stop-on-errors</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">trim-strings</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="oneway.html">One-Way Mapping</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">variables</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="expressionlanguage.html">Expression Language</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wildcard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see below</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">wildcard-case-insensitive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">X</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">see below</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_error_handling_stop_on_errors_allowed_exceptions">Error handling (stop-on-errors, allowed-exceptions)</h4>
+<div class="paragraph">
+<p>By default, if Dozer encounters an error while performing a field mapping, an
+exception is thrown and the mapping aborted. While this is the recommended
+behaviour, Dozer can be instructed to ignore the error and simply continue
+with the next field, via the <code>stop-on-errors</code> policy.</p>
+</div>
+<div class="paragraph">
+<p>You can also specify exceptions that should cause Dozer to stop and rethrow
+them, even if <code>stop-on-errors</code> is set to false, using the <code>allowed-exceptions</code>
+element:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">stop-on-errors</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">stop-on-errors</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">allowed-exceptions</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exception</span>&gt;</span>org.example.UnrecoverableError<span class="hljs-tag">&lt;/<span class="hljs-name">exception</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">exception</span>&gt;</span>org.example.BadException<span class="hljs-tag">&lt;/<span class="hljs-name">exception</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">allowed-exceptions</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_trimming_strings_trim_strings">Trimming Strings (trim-strings)</h4>
+<div class="paragraph">
+<p>As the name suggests, <code>trim-strings</code> applies Java&#x2019;s String.trim()
+to the source value before calling the target beans&#x2019;s setter.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_wildcard_mapping_wildcard_wildcard_case_insensitive">Wildcard mapping (wildcard, wildcard-case-insensitive)</h4>
+<div class="paragraph">
+<p>Per default, Dozer maps all fields between source and target bean
+that share the same name (&quot;wildcard mapping&quot;).
+Listing fields in mapping definitions does not override this behaviour,
+except for the given fields. For example, given the following classes</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">private</span> String firstName;
+    <span class="hljs-keyword">private</span> String lastName;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Contact</span> </span>{
+    <span class="hljs-keyword">private</span> String firstName;
+    <span class="hljs-keyword">private</span> String surname;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and the mapping definition</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>lastName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>surname<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>a mapping from a <code>Person</code> object onto a <code>Contact</code> will
+map <code>lastName</code> to <code>surname</code> and <code>firstName</code> to <code>firstName</code>,
+even though the latter pair is not mentioned in the mapping
+definition.</p>
+</div>
+<div class="paragraph">
+<p>You can disable wildcard mapping globally
+or at the class mapping level by setting <code>wildcard</code> to false. If you
+do, you have to explicitly specify each pair of fields that should be
+mapped:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>lastName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>surname<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>firstName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>firstName<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Up to Dozer version 5.4.0, wildcard mappings were case insensitive.
+Current versions of Dozer only automatically map fields with the exact
+same name. You can enable the old case insensitive behaviour by setting
+the <code>wildcard-case-insensitive</code> policy to true. Then, for example
+a source field named <code>camelCase</code> will be mapped to target field <code>camelcase</code>
+(and vice versa).</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="configuration/configuration.html" class="navigation navigation-prev " aria-label="Previous page: Configuration">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="apiConfiguration.html" class="navigation navigation-next " aria-label="Next page: Configuration via API">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Configuration via XML","level":"1.5.1","depth":2,"next":{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]},"previous":{"title":"Configuration","level":"1.5","depth":1,"path":"documentation/configuration/configuration.adoc","ref":"documentation/configuration/configuration.adoc","articles":[{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/xmlConfiguration.adoc","mtime":"2018-04-01T15:14:22.165Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JMX Integration · GitBook</title>
+        <title>Configuration via API · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="metadata.html" />
+    <link rel="next" href="mappingclasses.html" />
     
     
-    <link rel="prev" href="configuration/statistics.html" />
+    <link rel="prev" href="xmlConfiguration.html" />
     
 
     </head>
@@ -206,12 +206,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.5.1" data-path="advancedConfiguration.html">
+        <li class="chapter " data-level="1.5.1" data-path="xmlConfiguration.html">
             
-                <a href="advancedConfiguration.html">
+                <a href="xmlConfiguration.html">
             
                     
-                    Advanced Configuration
+                    Configuration via XML
             
                 </a>
             
@@ -219,12 +219,12 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.2" data-path="globalConfiguration.html">
+        <li class="chapter active" data-level="1.5.2" data-path="apiConfiguration.html">
             
-                <a href="globalConfiguration.html">
+                <a href="apiConfiguration.html">
             
                     
-                    Global Configuration
+                    Configuration via API
             
                 </a>
             
@@ -367,6 +367,19 @@
             
                     
                     Assembler Pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.11" data-path="immutable.html">
+            
+                <a href="immutable.html">
+            
+                    
+                    Mapping immutable types
             
                 </a>
             
@@ -551,33 +564,7 @@
             
         </li>
     
-        <li class="chapter " data-level="5.3" data-path="configuration/statistics.html">
-            
-                <a href="configuration/statistics.html">
-            
-                    
-                    Statistics
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="5.4" data-path="jmxintegration.html">
-            
-                <a href="jmxintegration.html">
-            
-                    
-                    JMX Integration
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.5" data-path="metadata.html">
+        <li class="chapter " data-level="5.3" data-path="metadata.html">
             
                 <a href="metadata.html">
             
@@ -817,7 +804,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JMX Integration</a>
+        <a href=".." >Configuration via API</a>
     </h1>
 </div>
 
@@ -833,62 +820,38 @@
                                 <section class="normal markdown-section">
                                 
                                 <div class="sect1">
-<h2 id="_jmx_integration">JMX Integration</h2>
+<h2 id="_configuration_via_api">Configuration via API</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Dozer can be managed via JMX. The Dozer distibution contains fully
-functional JMX MBeans. These MBeans can be found in the org.dozer.jmx
-package.</p>
+<p>If you are using the <a href="apimappings.html">MapperBuilder</a> to
+define your mappings, you can declare mapping, class, and field
+configuration settings programmatically:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">Mapper mapper = DozerBeanMapperBuilder.create()
+                .withMappingBuilder(<span class="hljs-keyword">new</span> BeanMappingBuilder() {
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configure</span><span class="hljs-params">()</span> </span>{
+                        mapping(type(A.class).mapEmptyString(<span class="hljs-keyword">true</span>),
+                                type(B.class),
+                                TypeMappingOptions.wildcardCaseInsensitive(<span class="hljs-keyword">true</span>)
+                        ).fields(
+                                field(<span class="hljs-string">&quot;fieldOfA&quot;</span>).getMethod(<span class="hljs-string">&quot;getTheField&quot;</span>),
+                                field(<span class="hljs-string">&quot;fieldOfB&quot;</span>),
+                                FieldsMappingOptions.oneWay()
+                        );
+                    }
+                })
+                .build();</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>Dozer auto registers these JMX Beans with the PlatformMBeanServer. You
-can suppress this behavior with the following Dozer configuration
-property:</p>
+<p><strong>Global configuration is currently not supported by the API.</strong></p>
 </div>
 <div class="paragraph">
-<p>dozer.autoregister.jmx.beans = false</p>
-</div>
-<table class="tableblock frame-all grid-all spread">
-<caption class="title">Table 1. Dozer JMX MBeans</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">MBean</th>
-<th class="tableblock halign-left valign-top">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DozerStatisticsControllerMBean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Runtime mapping statistics. The <a href="configuration/statistics.html">Statistics</a> section contains more information on the types of statistics that are available.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DozerAdminControllerMBean</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Admin functions such as enabling/disabling statistics gathering at runtime.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Note that JMX MBeans are potential source of memory leaks. MBeans should
-be disposed properly when application is stopped or restarted as in most
-of todays Web Containers there is no full JVM restart. The proper way to
-unregister all Dozer JMX Beans is to call destroy() method on
-DozerBeanMapper object.</p>
-</div>
-<div class="sect2">
-<h3 id="_sample_jmx_screen_shots">Sample JMX Screen Shots</h3>
-<div class="paragraph">
-<p>Dozer JMX MBeans via JConsole&#x2026;&#x200B;..</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../images/jmx1.png" alt="jmx1"></span></p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="../images/jmx2.png" alt="jmx2"></span></p>
-</div>
+<p>Please see <a href="xmlConfiguration.html#label-config-options">Configuration via XML</a>
+for a list of the available configuration settings.</p>
 </div>
 </div>
 </div>
@@ -918,12 +881,12 @@ DozerBeanMapper object.</p>
 
             
                 
-                <a href="configuration/statistics.html" class="navigation navigation-prev " aria-label="Previous page: Statistics">
+                <a href="xmlConfiguration.html" class="navigation navigation-prev " aria-label="Previous page: Configuration via XML">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="metadata.html" class="navigation navigation-next " aria-label="Next page: Metadata Query Interface">
+                <a href="mappingclasses.html" class="navigation navigation-next " aria-label="Next page: Mapping Classes">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -934,7 +897,7 @@ DozerBeanMapper object.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JMX Integration","level":"5.4","depth":1,"next":{"title":"Metadata Query Interface","level":"5.5","depth":1,"path":"documentation/metadata.adoc","ref":"documentation/metadata.adoc","articles":[]},"previous":{"title":"Statistics","level":"5.3","depth":1,"path":"documentation/configuration/statistics.adoc","ref":"documentation/configuration/statistics.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/jmxintegration.adoc","mtime":"2017-05-09T21:55:12.000Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2017-08-06T14:36:48.639Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configuration via API","level":"1.5.2","depth":2,"next":{"title":"Mapping Classes","level":"2.1","depth":1,"path":"documentation/mappingclasses.adoc","ref":"documentation/mappingclasses.adoc","articles":[]},"previous":{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/apiConfiguration.adoc","mtime":"2018-04-01T15:14:22.107Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T15:46:15.894Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
