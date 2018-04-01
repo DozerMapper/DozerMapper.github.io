@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>v5 to v6 · GitBook</title>
+        <title>v6.1.0 to v6.2.0 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="v6-to-v61.html" />
     
-    
-    <link rel="prev" href="../documentation/examples.html" />
+    <link rel="prev" href="v6-to-v61.html" />
     
 
     </head>
@@ -650,7 +648,7 @@
         
         
     
-        <li class="chapter active" data-level="8.1" data-path="v5-to-v6.html">
+        <li class="chapter " data-level="8.1" data-path="v5-to-v6.html">
             
                 <a href="v5-to-v6.html">
             
@@ -676,7 +674,7 @@
             
         </li>
     
-        <li class="chapter " data-level="8.3" data-path="v61-to-v62.html">
+        <li class="chapter active" data-level="8.3" data-path="v61-to-v62.html">
             
                 <a href="v61-to-v62.html">
             
@@ -817,7 +815,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >v5 to v6</a>
+        <a href=".." >v6.1.0 to v6.2.0</a>
     </h1>
 </div>
 
@@ -833,28 +831,77 @@
                                 <section class="normal markdown-section">
                                 
                                 <div class="sect1">
-<h2 id="_migration_from_v5_5_1_to_v6_0_0">Migration from v5.5.1 to v6.0.0</h2>
+<h2 id="_migration_from_v6_1_0_to_v6_2_0">Migration from v6.1.0 to v6.2.0</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>See <a href="https://github.com/DozerMapper/dozer/releases/tag/v6.0.0" target="_blank">for release notes</a>.</p>
+<p>See <a href="https://github.com/DozerMapper/dozer/releases/tag/6.2.0" target="_blank">for release notes</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_1_jdk_1_8_support_dropped">1. JDK &lt;1.8 support dropped</h3>
+<h3 id="_1_jmx_stats_has_been_removed">1. JMX/Stats has been removed</h3>
 <div class="paragraph">
-<p>Dozer is built against Java JDK 1.8 ONLY.</p>
+<p>As per 6.1.0 migration docs, JMX and Stats were deprecated. They have now been fully removed.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_2_maven_gav_group_id_artifact_and_version_has_changed">2. Maven GAV (Group ID, Artifact and Version) has changed:</h3>
+<h3 id="_2_dozer_properties_keys_changed">2. dozer.properties keys changed</h3>
+<div class="paragraph">
+<p><strong>From:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">    dozer.cache.converter.by.dest.type.maxsize
+    dozer.cache.super.type.maxsize
+    org.dozer.util.DozerClassLoader
+    org.dozer.util.DozerProxyResolver</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">    dozer.cache.converter-by-dest-type-maxsize
+    dozer.cache.super-type-maxsize
+    dozer.beans.class-loader-bean
+    dozer.beans.proxy-resolver-bean</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_support_for_yaml_systemproperties_and_environment_variables">3. Support for YAML, SystemProperties and Environment variables</h3>
+<div class="paragraph">
+<p>As as well as dozer.properties, we also support several new implementations, such as YAML, see:
+- <a href="https://github.com/DozerMapper/dozer/tree/6.2.0/core/src/main/java/org/dozer/config/resolvers" class="bare" target="_blank">https://github.com/DozerMapper/dozer/tree/6.2.0/core/src/main/java/org/dozer/config/resolvers</a>
+- <a href="https://github.com/DozerMapper/dozer/tree/6.2.0/core/src/main/java/org/dozer/config/processors" class="bare" target="_blank">https://github.com/DozerMapper/dozer/tree/6.2.0/core/src/main/java/org/dozer/config/processors</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_dozer_el_enabled_is_deprecated">4. dozer.el.enabled is deprecated</h3>
+<div class="paragraph">
+<p>The property for &apos;dozer.el.enabled&apos; has been deprecated. Instead, you should use:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">    DefaultELEngine elEngine = <span class="hljs-keyword">new</span> DefaultELEngine();
+    Mapper mapper = DozerBeanMapperBuilder.create()
+            .withMappingFiles(mappingFiles)
+            .withElementReader(<span class="hljs-keyword">new</span> ExpressionElementReader(elEngine))
+            .withELEngine(elEngine)
+            .build();</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_spring_maven_artifact_name_has_changed">5. Spring maven artifact name has changed</h3>
 <div class="paragraph">
 <p><strong>From:</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.dozer<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.5.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-spring<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.1.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -865,36 +912,63 @@
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-spring4<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.2.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_3_dozer_osgi_dropped">3. dozer-osgi dropped</h3>
+<h3 id="_6_spring_maven_artifact_name_has_changed">6. Spring maven artifact name has changed</h3>
 <div class="paragraph">
-<p>You no longer need to use the below, if you are running in an OSGi environment:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>net.sf.dozer<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-osgi<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>5.5.1<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Just simply use the dozer-core:</p>
+<p><strong>From:</strong></p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-proto<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.1.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-proto3<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.2.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_7_extended_spring_boot_support">7. Extended spring boot support</h3>
+<div class="paragraph">
+<p><code>dozer-spring-boot-starter</code> and <code>dozer-spring-boot-autoconfigure</code> artifacts added to support spring boot auto configuration features.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-spring-boot-starter<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.2.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_8_dozer_xml_use_jaxb_mapping_engine_to_use_new_jaxb">8. dozer.xml.use-jaxb-mapping-engine to use new JAXB</h3>
+<div class="paragraph">
+<p>The current Dozer XML to Objects implementation uses org.w3c.dom.Document to parse the model.
+Going forward, the intention is to use a JAXB model. This feature is not enabled by default, but can be via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">    dozer.xml.use-jaxb-mapping-engine=true</code></pre>
 </div>
 </div>
 </div>
@@ -926,14 +1000,10 @@
 
             
                 
-                <a href="../documentation/examples.html" class="navigation navigation-prev " aria-label="Previous page: Examples">
+                <a href="v6-to-v61.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: v6.0.0 to v6.1.0">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="v6-to-v61.html" class="navigation navigation-next " aria-label="Next page: v6.0.0 to v6.1.0">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -942,7 +1012,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v5 to v6","level":"8.1","depth":1,"next":{"title":"v6.0.0 to v6.1.0","level":"8.2","depth":1,"path":"migration/v6-to-v61.adoc","ref":"migration/v6-to-v61.adoc","articles":[]},"previous":{"title":"Examples","level":"7.2","depth":1,"path":"documentation/examples.adoc","ref":"documentation/examples.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v5-to-v6.adoc","mtime":"2017-11-20T19:11:04.886Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:15:11.084Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v6.1.0 to v6.2.0","level":"8.3","depth":1,"next":{"title":"Dozer Mapping XSD","level":"9.1","depth":1,"url":"https://dozermapper.github.io/schema/schema/bean-mapping.xsd","ref":"https://dozermapper.github.io/schema/schema/bean-mapping.xsd","articles":[]},"previous":{"title":"v6.0.0 to v6.1.0","level":"8.2","depth":1,"path":"migration/v6-to-v61.adoc","ref":"migration/v6-to-v61.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v61-to-v62.adoc","mtime":"2018-04-01T15:56:22.230Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:15:11.084Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
