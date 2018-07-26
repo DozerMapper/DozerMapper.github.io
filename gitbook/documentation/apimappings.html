@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -906,20 +919,20 @@ code example.</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> org.dozer.classmap.RelationshipType;
-<span class="hljs-keyword">import</span> org.dozer.loader.api.BeanMappingBuilder;
-<span class="hljs-keyword">import</span> org.dozer.loader.api.FieldsMappingOptions;
-<span class="hljs-keyword">import</span> org.dozer.loader.api.TypeMappingOptions;
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">import</span> com.github.dozermapper.core.classmap.RelationshipType;
+<span class="hljs-keyword">import</span> com.github.dozermapper.core.loader.api.BeanMappingBuilder;
+<span class="hljs-keyword">import</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions;
+<span class="hljs-keyword">import</span> com.github.dozermapper.core.loader.api.TypeMappingOptions;
 
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.collectionStrategy;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.copyByReference;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.customConverter;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.customConverterId;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.hintA;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.hintB;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.FieldsMappingOptions.useMapId;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.TypeMappingOptions.mapId;
-<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> org.dozer.loader.api.TypeMappingOptions.mapNull;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.collectionStrategy;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.copyByReference;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.customConverter;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.customConverterId;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.hintA;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.hintB;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.FieldsMappingOptions.useMapId;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.TypeMappingOptions.mapId;
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> com.github.dozermapper.core.loader.api.TypeMappingOptions.mapNull;
 
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> </span>{
 
@@ -942,7 +955,7 @@ code example.</p>
                             customConverterId(<span class="hljs-string">&quot;id&quot;</span>)
                     )
                     .fields(<span class="hljs-string">&quot;src&quot;</span>, <span class="hljs-string">&quot;dest&quot;</span>,
-                            customConverter(<span class="hljs-string">&quot;org.dozer.CustomConverter&quot;</span>)
+                            customConverter(<span class="hljs-string">&quot;com.github.dozermapper.core.CustomConverter&quot;</span>)
                     );
             }
         };
@@ -1006,7 +1019,7 @@ It is possible to add multiple Builder classes.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"via API","level":"1.4.2","depth":2,"next":{"title":"Configuration","level":"1.5","depth":1,"path":"documentation/configuration/configuration.adoc","ref":"documentation/configuration/configuration.adoc","articles":[{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]}]},"previous":{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/apimappings.adoc","mtime":"2017-11-20T19:11:04.858Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"via API","level":"1.4.2","depth":2,"next":{"title":"Configuration","level":"1.5","depth":1,"path":"documentation/configuration/configuration.adoc","ref":"documentation/configuration/configuration.adoc","articles":[{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]}]},"previous":{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/apimappings.adoc","mtime":"2018-04-02T14:50:59.366Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

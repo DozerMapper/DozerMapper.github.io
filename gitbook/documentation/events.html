@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -862,8 +875,8 @@
 <h2 id="_event_listening">Event Listening</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>By implementing the <code>DozerEventListener</code> interface dozer allows you to
-listen to 4 different events:</p>
+<p>By implementing the <code>EventListener</code> interface dozer allows you to listen to
+4 different events:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -882,18 +895,22 @@ listen to 4 different events:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>A <code>DozerEvent</code> object is passed into these callback methods which stores
+<p>An <code>Event</code> object is passed into these callback methods which stores
 information about the <code>ClassMap</code>, <code>FieldMap</code>, source object, destination
 object, and destination value. This will allow you to extend Dozer and
 manipulate mapped objects at run-time. The interface is shown below:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">DozerEventListener</span> </span>{
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mappingStarted</span><span class="hljs-params">(DozerEvent event)</span></span>;
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">preWritingDestinationValue</span><span class="hljs-params">(DozerEvent event)</span></span>;
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">postWritingDestinationValue</span><span class="hljs-params">(DozerEvent event)</span></span>;
-  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">mappingFinished</span><span class="hljs-params">(DozerEvent event)</span></span>;
+<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">EventListener</span> </span>{
+
+    <span class="hljs-function">publicvoid <span class="hljs-title">onMappingStarted</span><span class="hljs-params">(Event event)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPreWritingDestinationValue</span><span class="hljs-params">(Event event)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onPostWritingDestinationValue</span><span class="hljs-params">(Event event)</span></span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onMappingFinished</span><span class="hljs-params">(Event event)</span></span>;
 }</code></pre>
 </div>
 </div>
@@ -907,7 +924,7 @@ using Spring to inject an event listener:</p>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">default-lazy-init</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;EventMapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;EventMapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.DozerBeanMapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
@@ -919,7 +936,7 @@ using Spring to inject an event listener:</p>
             <span class="hljs-tag">&lt;/<span class="hljs-name">list</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;eventTestListener&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.event.EventTestListener&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;eventTestListener&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.event.EventTestListener&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -967,7 +984,7 @@ using Spring to inject an event listener:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Event Listening","level":"5.2","depth":1,"next":{"title":"Metadata Query Interface","level":"5.3","depth":1,"path":"documentation/metadata.adoc","ref":"documentation/metadata.adoc","articles":[]},"previous":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/events.adoc","mtime":"2017-11-20T19:11:04.863Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Event Listening","level":"5.2","depth":1,"next":{"title":"Metadata Query Interface","level":"5.3","depth":1,"path":"documentation/metadata.adoc","ref":"documentation/metadata.adoc","articles":[]},"previous":{"title":"Logging","level":"5.1","depth":1,"path":"documentation/configuration/logging.adoc","ref":"documentation/configuration/logging.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/events.adoc","mtime":"2018-04-11T22:47:24.889Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

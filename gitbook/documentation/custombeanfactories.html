@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -870,7 +883,7 @@ if you need more flexibility you can specify your own bean factories to
 instantiate the data objects.</p>
 </div>
 <div class="paragraph">
-<p>Your custom bean factory must implement the <code>org.dozer.BeanFactory</code>
+<p>Your custom bean factory must implement the <code>com.github.dozermapper.core.BeanFactory</code>
 interface. By default the Dozer mapping engine will use the destination
 object class name for the bean id when calling the factory.</p>
 </div>
@@ -957,7 +970,7 @@ control techniques.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;org.dozer.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.DozerBeanMapper&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.Mapper&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.DozerBeanMapper&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;mappingFiles&quot;</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">list</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>dozerBeanMapping.xml<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span>
@@ -967,7 +980,7 @@ control techniques.</p>
             <span class="hljs-tag">&lt;<span class="hljs-name">map</span>&gt;</span>
                 <span class="hljs-comment">&lt;!-- the key matches the name of the factory in the
              dozerBeanMapping.xml file --&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">entry</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;org.dozer.factories.SampleCustomBeanFactory&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">entry</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.factories.SampleCustomBeanFactory&quot;</span>&gt;</span>
                     <span class="hljs-tag">&lt;<span class="hljs-name">ref</span> <span class="hljs-attr">bean</span>=<span class="hljs-string">&quot;sampleCustomBeanFactory&quot;</span> /&gt;</span>
                 <span class="hljs-tag">&lt;/<span class="hljs-name">entry</span>&gt;</span>
                 <span class="hljs-comment">&lt;!-- more factories can be supplied with additional
@@ -975,7 +988,7 @@ control techniques.</p>
             <span class="hljs-tag">&lt;/<span class="hljs-name">map</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sampleCustomBeanFactory&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.dozer.factories.SampleCustomBeanFactory&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;sampleCustomBeanFactory&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.factories.SampleCustomBeanFactory&quot;</span> /&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -1028,7 +1041,7 @@ the <code>Mapper</code> instance.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Custom Bean Factories","level":"4.2","depth":1,"next":{"title":"Custom Create Methods","level":"4.3","depth":1,"path":"documentation/customCreateMethod.adoc","ref":"documentation/customCreateMethod.adoc","articles":[]},"previous":{"title":"Custom Converters","level":"4.1","depth":1,"path":"documentation/customconverter.adoc","ref":"documentation/customconverter.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/custombeanfactories.adoc","mtime":"2017-11-20T19:11:04.860Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Custom Bean Factories","level":"4.2","depth":1,"next":{"title":"Custom Create Methods","level":"4.3","depth":1,"path":"documentation/customCreateMethod.adoc","ref":"documentation/customCreateMethod.adoc","articles":[]},"previous":{"title":"Custom Converters","level":"4.1","depth":1,"path":"documentation/customconverter.adoc","ref":"documentation/customconverter.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/custombeanfactories.adoc","mtime":"2018-04-02T14:50:59.369Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

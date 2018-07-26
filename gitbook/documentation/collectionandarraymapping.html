@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -909,7 +922,7 @@ elements in the src Collection.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>hintList<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hintList<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -1229,8 +1242,8 @@ level.</p>
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mappings</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">relationship-type</span>=<span class="hljs-string">&quot;non-cumulative&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>someList<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>someList<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -1248,8 +1261,8 @@ level.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">relationship-type</span>=<span class="hljs-string">&quot;cumulative&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>hintList<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hintList<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">a-hint</span>&gt;</span>org.dozer.vo.TheFirstSubClass<span class="hljs-tag">&lt;/<span class="hljs-name">a-hint</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">a-hint</span>&gt;</span>com.github.dozermapper.core.vo.TheFirstSubClass<span class="hljs-tag">&lt;/<span class="hljs-name">a-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 
 <span class="hljs-comment">&lt;!-- objects will updated if already exist in List, added if they are not present --&gt;</span>
@@ -1331,7 +1344,7 @@ results contains orphans. The default setting value is false.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Collections and Arrays","level":"3.3","depth":1,"next":{"title":"Map Backed Property Mapping","level":"3.4","depth":1,"path":"documentation/mapbackedproperty.adoc","ref":"documentation/mapbackedproperty.adoc","articles":[]},"previous":{"title":"String to Date","level":"3.2","depth":1,"path":"documentation/stringtodatemapping.adoc","ref":"documentation/stringtodatemapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/collectionandarraymapping.adoc","mtime":"2017-11-20T19:11:04.859Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Collections and Arrays","level":"3.3","depth":1,"next":{"title":"Map Backed Property Mapping","level":"3.4","depth":1,"path":"documentation/mapbackedproperty.adoc","ref":"documentation/mapbackedproperty.adoc","articles":[]},"previous":{"title":"String to Date","level":"3.2","depth":1,"path":"documentation/stringtodatemapping.adoc","ref":"documentation/stringtodatemapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/collectionandarraymapping.adoc","mtime":"2018-04-02T14:50:59.367Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
