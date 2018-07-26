@@ -595,12 +595,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="../documentation/xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="../documentation/springBootIntegration.html">
             
-                <a href="../documentation/xmlbeans.html">
+                <a href="../documentation/springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../documentation/jaxb.html">
+            
+                <a href="../documentation/jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -735,7 +748,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -864,9 +877,96 @@
 See <a href="https://github.com/DozerMapper/dozer/releases/tag/6.3.0" target="_blank">for release notes</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_1">1. &#x2026;&#x200B;</h3>
+<h3 id="_1_karaf2_support_dropped">1. Karaf2 support dropped</h3>
 <div class="paragraph">
-<p>&#x2026;&#x200B;</p>
+<p>As karaf2 is now deprecated upstream, and is not supported with Java9, support is dropped.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_2_apache_xmlbeans_support_dropped">2. Apache XMLBeans support dropped</h3>
+<div class="paragraph">
+<p>As xmlbeans is now deprecated upstream, and is not supported with Java9, support is dropped.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_3_uberjar_now_provided">3. UberJAR now provided</h3>
+<div class="paragraph">
+<p><strong>Maven GAV</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>com.github.dozermapper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>dozer-core<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>6.3.0<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">classifier</span>&gt;</span>jar-with-dependencies<span class="hljs-tag">&lt;/<span class="hljs-name">classifier</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_4_dozer_xml_use_jaxb_mapping_engine_enabled_by_default">4. dozer.xml.use-jaxb-mapping-engine enabled by default</h3>
+<div class="paragraph">
+<p>JAXB is used by default, if this causes issues, it can be disabled via:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">    -Ddozer.xml.use-jaxb-mapping-engine=false</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>And the following is deprecated:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">    com.github.dozermapper.core.loader.xml</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In favour of:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    com.github.dozermapper.core.builder.xml</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_5_updated_dozer_core_package_name">5. Updated dozer-core package name</h3>
+<div class="paragraph">
+<p><strong>From:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">org.dozer</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">com.github.dozermapper.core</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_6_updated_dozereventlistener_package_class_name">6. Updated DozerEventListener package/class name</h3>
+<div class="paragraph">
+<p><strong>From:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">org.dozer.DozerEventListener</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>To:</strong></p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-java" data-lang="java">com.github.dozermapper.core.events.EventListener</code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -909,7 +1009,7 @@ See <a href="https://github.com/DozerMapper/dozer/releases/tag/6.3.0" target="_b
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"v6.2.0 to v6.3.0","level":"8.4","depth":1,"next":{"title":"Mapping XSD","level":"9.1","depth":1,"url":"https://dozermapper.github.io/schema/bean-mapping.xsd","ref":"https://dozermapper.github.io/schema/bean-mapping.xsd","articles":[]},"previous":{"title":"v6.1.0 to v6.2.0","level":"8.3","depth":1,"path":"migration/v61-to-v62.adoc","ref":"migration/v61-to-v62.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v62-to-v63.adoc","mtime":"2018-04-01T16:20:11.811Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"v6.2.0 to v6.3.0","level":"8.4","depth":1,"next":{"title":"Mapping XSD","level":"9.1","depth":1,"url":"https://dozermapper.github.io/schema/bean-mapping.xsd","ref":"https://dozermapper.github.io/schema/bean-mapping.xsd","articles":[]},"previous":{"title":"v6.1.0 to v6.2.0","level":"8.3","depth":1,"path":"migration/v61-to-v62.adoc","ref":"migration/v61-to-v62.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"migration/v62-to-v63.adoc","mtime":"2018-07-26T13:37:01.798Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

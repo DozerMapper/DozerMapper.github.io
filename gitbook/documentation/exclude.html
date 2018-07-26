@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -889,8 +902,8 @@ same name) should be done. The default value is true. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field1<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>field1<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -915,8 +928,8 @@ specified at the mapping or class level. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-null</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>to.one<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -930,8 +943,8 @@ specified at the mapping or class level. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">map-null</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>org.dozer.vo.AnotherTestObjectPrime
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">map-null</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObjectPrime
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -952,8 +965,8 @@ This can be specified at the mapping or class level. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-empty-string</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>to.one<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -967,9 +980,9 @@ This can be specified at the mapping or class level. For example:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.AnotherTestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">map-empty-string</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-      org.dozer.vo.AnotherTestObjectPrime
+      com.github.dozermapper.core.vo.AnotherTestObjectPrime
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>field4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -1023,7 +1036,7 @@ This can be specified at the mapping or class level. For example:</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Excluding Fields","level":"2.9","depth":1,"next":{"title":"Assembler Pattern","level":"2.10","depth":1,"path":"documentation/advancedproperty.adoc","ref":"documentation/advancedproperty.adoc","articles":[]},"previous":{"title":"Indexed Property Mapping","level":"2.8","depth":1,"path":"documentation/indexmapping.adoc","ref":"documentation/indexmapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/exclude.adoc","mtime":"2017-11-20T19:11:04.864Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Excluding Fields","level":"2.9","depth":1,"next":{"title":"Assembler Pattern","level":"2.10","depth":1,"path":"documentation/advancedproperty.adoc","ref":"documentation/advancedproperty.adoc","articles":[]},"previous":{"title":"Indexed Property Mapping","level":"2.8","depth":1,"path":"documentation/indexmapping.adoc","ref":"documentation/indexmapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/exclude.adoc","mtime":"2018-04-02T14:50:59.371Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

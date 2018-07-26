@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -894,8 +907,8 @@ mappings file:</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>true<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
         <span class="hljs-comment">&lt;!-- these are always bi-directional --&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestCustomConverterObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.converters.TestCustomConverter&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.TestCustomConverterObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>another.type.to.Associate<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
@@ -917,8 +930,8 @@ classes.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span> <span class="hljs-attr">date-format</span>=<span class="hljs-string">&quot;MM/dd/yyyy HH:mm&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -937,8 +950,8 @@ tag:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span> <span class="hljs-attr">is-accessible</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span> <span class="hljs-attr">is-accessible</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span>com.github.dozermapper.core.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -955,8 +968,8 @@ tag:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">remove-orphans</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -973,8 +986,8 @@ tag:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.SpringBean<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.SpringBeanPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">get-method</span>=<span class="hljs-string">&quot;getTheAttribute&quot;</span>&gt;</span>anAttributeToMap<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>anAttributeToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -1326,8 +1339,8 @@ except for the given fields. For example, given the following classes</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>lastName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>surname<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -1350,8 +1363,8 @@ mapped:</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.Person<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.Contact<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>lastName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>surname<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -1417,7 +1430,7 @@ a source field named <code>camelCase</code> will be mapped to target field <code
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Configuration via XML","level":"1.5.1","depth":2,"next":{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]},"previous":{"title":"Configuration","level":"1.5","depth":1,"path":"documentation/configuration/configuration.adoc","ref":"documentation/configuration/configuration.adoc","articles":[{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/xmlConfiguration.adoc","mtime":"2018-04-01T15:14:22.165Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Configuration via XML","level":"1.5.1","depth":2,"next":{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]},"previous":{"title":"Configuration","level":"1.5","depth":1,"path":"documentation/configuration/configuration.adoc","ref":"documentation/configuration/configuration.adoc","articles":[{"title":"Configuration via XML","level":"1.5.1","depth":2,"path":"documentation/xmlConfiguration.adoc","ref":"documentation/xmlConfiguration.adoc","articles":[]},{"title":"Configuration via API","level":"1.5.2","depth":2,"path":"documentation/apiConfiguration.adoc","ref":"documentation/apiConfiguration.adoc","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/xmlConfiguration.adoc","mtime":"2018-04-02T14:50:59.379Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

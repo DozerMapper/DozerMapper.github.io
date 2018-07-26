@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -885,16 +898,16 @@ file.</p>
           <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
           <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://dozermapper.github.io/schema/bean-mapping http://dozermapper.github.io/schema/bean-mapping.xsd&quot;</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>onePrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObjectFoo<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.TestObjectFooPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.TestObjectFoo<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.TestObjectFooPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>oneFoo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
             <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>oneFooPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -981,7 +994,7 @@ corresponding API calls.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Mappings via XML","level":"1.4","depth":1,"next":{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},"previous":{"title":"Usage","level":"1.3.1","depth":2,"path":"documentation/usage.adoc","ref":"documentation/usage.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/mappings.adoc","mtime":"2017-11-20T19:11:04.866Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Mappings via XML","level":"1.4","depth":1,"next":{"title":"via Annotations","level":"1.4.1","depth":2,"path":"documentation/annotations.adoc","ref":"documentation/annotations.adoc","articles":[]},"previous":{"title":"Usage","level":"1.3.1","depth":2,"path":"documentation/usage.adoc","ref":"documentation/usage.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/mappings.adoc","mtime":"2018-04-02T14:50:59.376Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -117,20 +117,20 @@
     </xs:complexType>
   </xs:element>
 
-  <xs:complexType name="fieldDefinition">
+  <xs:complexType name="variable">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="date-format" type="xs:string"/>
-        <xs:attribute name="type" type="tns:field-type"/>
-        <xs:attribute name="set-method" type="xs:string"/>
-        <xs:attribute name="get-method" type="xs:string"/>
-        <xs:attribute name="key" type="xs:string"/>
-        <xs:attribute name="map-set-method" type="xs:string"/>
-        <xs:attribute name="map-get-method" type="xs:string"/>
-        <xs:attribute name="is-accessible" type="xs:boolean"/>
-        <xs:attribute name="create-method" type="xs:string"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
       </xs:extension>
     </xs:simpleContent>
+  </xs:complexType>
+
+  <xs:complexType name="converter-type">
+    <xs:sequence>
+      <xs:element name="class-a" type="tns:class"/>
+      <xs:element name="class-b" type="tns:class"/>
+    </xs:sequence>
+    <xs:attribute name="type" type="xs:string" use="required"/>
   </xs:complexType>
 
   <xs:complexType name="class">
@@ -149,21 +149,28 @@
     </xs:simpleContent>
   </xs:complexType>
 
-  <xs:complexType name="converter-type">
-    <xs:sequence>
-      <xs:element name="class-a" type="tns:class"/>
-      <xs:element name="class-b" type="tns:class"/>
-    </xs:sequence>
-    <xs:attribute name="type" type="xs:string" use="required"/>
-  </xs:complexType>
-
-  <xs:complexType name="variable">
+  <xs:complexType name="fieldDefinition">
     <xs:simpleContent>
       <xs:extension base="xs:string">
-        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="date-format" type="xs:string"/>
+        <xs:attribute name="type" type="tns:field-type"/>
+        <xs:attribute name="set-method" type="xs:string"/>
+        <xs:attribute name="get-method" type="xs:string"/>
+        <xs:attribute name="key" type="xs:string"/>
+        <xs:attribute name="map-set-method" type="xs:string"/>
+        <xs:attribute name="map-get-method" type="xs:string"/>
+        <xs:attribute name="is-accessible" type="xs:boolean"/>
+        <xs:attribute name="create-method" type="xs:string"/>
       </xs:extension>
     </xs:simpleContent>
   </xs:complexType>
+
+  <xs:simpleType name="relationship">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cumulative"/>
+      <xs:enumeration value="non-cumulative"/>
+    </xs:restriction>
+  </xs:simpleType>
 
   <xs:simpleType name="field-type">
     <xs:restriction base="xs:string">
@@ -174,15 +181,8 @@
 
   <xs:simpleType name="type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="one-way"/>
       <xs:enumeration value="bi-directional"/>
-    </xs:restriction>
-  </xs:simpleType>
-
-  <xs:simpleType name="relationship">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="cumulative"/>
-      <xs:enumeration value="non-cumulative"/>
+      <xs:enumeration value="one-way"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>

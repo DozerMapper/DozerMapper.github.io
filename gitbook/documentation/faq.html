@@ -60,7 +60,7 @@
     <link rel="next" href="examples.html" />
     
     
-    <link rel="prev" href="xmlbeans.html" />
+    <link rel="prev" href="jaxb.html" />
     
 
     </head>
@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -978,8 +991,7 @@ constructors. Does Dozer support this use case?</a></p>
 <p><a href="#enum-support">Does Dozer support JDK 1.5 enums?</a></p>
 </li>
 <li>
-<p><a href="#xmlbeans-jaxb">Does Dozer support XMLBeans and JAXB generated
-data objects?</a></p>
+<p><a href="#jaxb">Does Dozer support JAXB generated data objects?</a></p>
 </li>
 <li>
 <p><a href="#eclipse-plugin">Is there an Eclipse plugin or visual editor for
@@ -1224,8 +1236,8 @@ mapping instead of the standard mapping logic.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.SomeCustomConverter&quot;</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.SomeCustomDoubleObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.converters.SomeCustomConverter&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.SomeCustomDoubleObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.lang.Double<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span></code></pre>
@@ -1294,7 +1306,7 @@ custom field mapping.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;myTestMapping&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.SomeComplexType<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.SomeComplexType<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.util.Map<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -1336,13 +1348,7 @@ instances of the destination object.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="xmlbeans-jaxb">Does Dozer support XMLBeans and JAXB generated data objects?</h3>
-<div class="paragraph">
-<p>Dozer supports mapping POJOs to XMLBeans objects. Use the XMLBeanFactory
-for any XMLBeans you want created. This factory will also be used for
-mapping any fields that need to be instantiated in a deep mapping that
-are not regular POJOs but are XMLBeans.</p>
-</div>
+<h3 id="jaxb">Does Dozer support JAXB generated data objects?</h3>
 <div class="paragraph">
 <p>Dozer has support for mapping POJOs to JAXB objects. Use the
 JAXBBeanFactory for any JAXB objects you want created.</p>
@@ -1375,7 +1381,7 @@ the same type as the elements in the src Collection.</p>
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>someList<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>otherList<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.TheFirstSubClassPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span></code></pre>
 </div>
 </div>
@@ -1554,9 +1560,9 @@ dozer: Successfully loaded custom xml mappings from URL:[file:/local/subversion_
 </div>
 <div class="paragraph">
 <p>To debug individual field mappings between classes, set the logging
-level &quot;org.dozer.MappingProcessor=DEBUG&quot;. For example, if you are using
+level &quot;com.github.dozermapper.core.MappingProcessor=DEBUG&quot;. For example, if you are using
 log4j you would add the following entry to your log4j configuration file
-&quot;log4j.category.org.dozer.MappingProcessor=DEBUG&quot;. This will show you
+&quot;log4j.category.com.github.dozermapper.core.MappingProcessor=DEBUG&quot;. This will show you
 every field mapping that Dozer performs along with the actual source and
 destination values. You will see output similar to the following&#x2026;&#x200B;.</p>
 </div>
@@ -1593,8 +1599,8 @@ dozer-global-configuration.xml. Sample global configuration file&#x2026;&#x200B;
         <span class="hljs-tag">&lt;<span class="hljs-name">date-format</span>&gt;</span>MM/dd/yyyy HH:mm<span class="hljs-tag">&lt;/<span class="hljs-name">date-format</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">wildcard</span>&gt;</span>false<span class="hljs-tag">&lt;/<span class="hljs-name">wildcard</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">custom-converters</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;org.dozer.converters.TestCustomConverter&quot;</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.CustomDoubleObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">converter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.converters.TestCustomConverter&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.CustomDoubleObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
                 <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.lang.Double<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
             <span class="hljs-tag">&lt;/<span class="hljs-name">converter</span>&gt;</span>
         <span class="hljs-tag">&lt;/<span class="hljs-name">custom-converters</span>&gt;</span>
@@ -1639,7 +1645,7 @@ submit a support request. Please submit all requests via
 
             
                 
-                <a href="xmlbeans.html" class="navigation navigation-prev " aria-label="Previous page: JAXB and XMLBeans">
+                <a href="jaxb.html" class="navigation navigation-prev " aria-label="Previous page: JAXB">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1655,7 +1661,7 @@ submit a support request. Please submit all requests via
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"7.1","depth":1,"next":{"title":"Examples","level":"7.2","depth":1,"path":"documentation/examples.adoc","ref":"documentation/examples.adoc","articles":[]},"previous":{"title":"JAXB and XMLBeans","level":"6.2","depth":1,"path":"documentation/xmlbeans.adoc","ref":"documentation/xmlbeans.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/faq.adoc","mtime":"2018-04-01T16:00:28.881Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"7.1","depth":1,"next":{"title":"Examples","level":"7.2","depth":1,"path":"documentation/examples.adoc","ref":"documentation/examples.adoc","articles":[]},"previous":{"title":"JAXB","level":"6.3","depth":1,"path":"documentation/jaxb.adoc","ref":"documentation/jaxb.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/faq.adoc","mtime":"2018-07-26T17:06:00.041Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

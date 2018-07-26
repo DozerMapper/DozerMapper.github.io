@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JAXB and XMLBeans · GitBook</title>
+        <title>JAXB · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -60,7 +60,7 @@
     <link rel="next" href="faq.html" />
     
     
-    <link rel="prev" href="springintegration.html" />
+    <link rel="prev" href="springBootIntegration.html" />
     
 
     </head>
@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter active" data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -843,7 +856,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JAXB and XMLBeans</a>
+        <a href=".." >JAXB</a>
     </h1>
 </div>
 
@@ -876,9 +889,9 @@ JAXBBeanFactory for any JAXB objects you want create.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">bean-factory</span>=<span class="hljs-string">&quot;org.dozer.factory.JAXBBeanFactory&quot;</span>&gt;</span>
-    org.dozer.vo.jaxb.employee.Employee
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">bean-factory</span>=<span class="hljs-string">&quot;com.github.dozermapper.core.factory.JAXBBeanFactory&quot;</span>&gt;</span>
+    com.github.dozermapper.core.vo.jaxb.employee.Employee
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>name<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -889,52 +902,6 @@ JAXBBeanFactory for any JAXB objects you want create.</p>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>address.street<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_mapping_xmlbeans">Mapping XMLBeans</h3>
-<div class="paragraph">
-<p>Dozer has support for mapping POJOs to XMLBeans objects. Use the
-XMLBeanFactory for any XMLBeans you want created. This factory will also
-be used for mapping any fields that need to be instantiated in a deep
-mapping that are not regular POJOs but are XMLBeans.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">wildcard</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">bean-factory</span>=<span class="hljs-string">&quot;org.dozer.factory.XMLBeanFactory&quot;</span>&gt;</span>
-    org.dozer.vo.GetWeatherByZipCodeDocument
-  <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>one<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>GetWeatherByZipCode.zipCode<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>The unit test:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-java" data-lang="java"><span class="hljs-comment">// Map from TestObject to XMLBeans</span>
-TestObject to = <span class="hljs-keyword">new</span> TestObject();
-to.setOne(<span class="hljs-string">&quot;one&quot;</span>);
-
-GetWeatherByZipCodeDocument doc = mapper.map(to, GetWeatherByZipCodeDocument.class);
-
-assertEquals(to.getOne(), doc.getGetWeatherByZipCode().getZipCode());
-
-<span class="hljs-comment">// Map from XMLBeans to TestObject</span>
-GetWeatherByZipCodeDocument res = GetWeatherByZipCodeDocument.Factory.newInstance();
-GetWeatherByZipCode zipCode = res.addNewGetWeatherByZipCode();
-zipCode.setZipCode(<span class="hljs-string">&quot;one&quot;</span>);
-
-TestObject to2 = mapper.map(res, TestObject.class);
-
-assertEquals(res.getGetWeatherByZipCode().getZipCode(), to2.getOne());</code></pre>
 </div>
 </div>
 </div>
@@ -966,7 +933,7 @@ assertEquals(res.getGetWeatherByZipCode().getZipCode(), to2.getOne());</code></p
 
             
                 
-                <a href="springintegration.html" class="navigation navigation-prev " aria-label="Previous page: Spring Integration">
+                <a href="springBootIntegration.html" class="navigation navigation-prev " aria-label="Previous page: Spring Boot Integration">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -982,7 +949,7 @@ assertEquals(res.getGetWeatherByZipCode().getZipCode(), to2.getOne());</code></p
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JAXB and XMLBeans","level":"6.2","depth":1,"next":{"title":"FAQ","level":"7.1","depth":1,"path":"documentation/faq.adoc","ref":"documentation/faq.adoc","articles":[]},"previous":{"title":"Spring Integration","level":"6.1","depth":1,"path":"documentation/springintegration.adoc","ref":"documentation/springintegration.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/xmlbeans.adoc","mtime":"2017-11-20T19:11:04.869Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JAXB","level":"6.3","depth":1,"next":{"title":"FAQ","level":"7.1","depth":1,"path":"documentation/faq.adoc","ref":"documentation/faq.adoc","articles":[]},"previous":{"title":"Spring Boot Integration","level":"6.2","depth":1,"path":"documentation/springBootIntegration.adoc","ref":"documentation/springBootIntegration.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/jaxb.adoc","mtime":"2018-04-02T14:50:59.374Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -888,7 +901,7 @@ want to be copied by reference in the configuration block.</p>
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">copy-by-references</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">copy-by-reference</span>&gt;</span>
-       org.dozer.vo.NoExtendBaseObjectGlobalCopyByReference
+       com.github.dozermapper.core.vo.NoExtendBaseObjectGlobalCopyByReference
      <span class="hljs-tag">&lt;/<span class="hljs-name">copy-by-reference</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">copy-by-references</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
@@ -903,10 +916,10 @@ is applied via mask, which can inlcude multiple wildcard (*) characters.</p>
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">configuration</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">copy-by-references</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">copy-by-reference</span>&gt;</span>
-       org.dozer.vo.*
+       com.github.dozermapper.core.vo.*
      <span class="hljs-tag">&lt;/<span class="hljs-name">copy-by-reference</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">copy-by-reference</span>&gt;</span>
-       org.dozer.*.vo.*DTO
+       com.github.dozermapper.core.*.vo.*DTO
      <span class="hljs-tag">&lt;/<span class="hljs-name">copy-by-reference</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">copy-by-references</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">configuration</span>&gt;</span></code></pre>
@@ -925,16 +938,16 @@ mapped as the source object.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">classa</span>&gt;</span>org.dozer.vo.self.SimpleAccount<span class="hljs-tag">&lt;/<span class="hljs-name">classa</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">classb</span>&gt;</span>org.dozer.vo.self.Account<span class="hljs-tag">&lt;/<span class="hljs-name">classb</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">classa</span>&gt;</span>com.github.dozermapper.core.vo.self.SimpleAccount<span class="hljs-tag">&lt;/<span class="hljs-name">classa</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">classb</span>&gt;</span>com.github.dozermapper.core.vo.self.Account<span class="hljs-tag">&lt;/<span class="hljs-name">classb</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>this<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>address<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">classa</span>&gt;</span>org.dozer.vo.self.SimpleAccount<span class="hljs-tag">&lt;/<span class="hljs-name">classa</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">classb</span>&gt;</span>org.dozer.vo.self.Address<span class="hljs-tag">&lt;/<span class="hljs-name">classb</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">classa</span>&gt;</span>com.github.dozermapper.core.vo.self.SimpleAccount<span class="hljs-tag">&lt;/<span class="hljs-name">classa</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">classb</span>&gt;</span>com.github.dozermapper.core.vo.self.Address<span class="hljs-tag">&lt;/<span class="hljs-name">classb</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>streetName<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>street<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -987,7 +1000,7 @@ mapped as the source object.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Copying By Object Reference","level":"2.6","depth":1,"next":{"title":"Deep Property Mapping","level":"2.7","depth":1,"path":"documentation/deepmapping.adoc","ref":"documentation/deepmapping.adoc","articles":[]},"previous":{"title":"One-Way Mapping","level":"2.5","depth":1,"path":"documentation/oneway.adoc","ref":"documentation/oneway.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/copybyreference.adoc","mtime":"2017-11-20T19:11:04.860Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Copying By Object Reference","level":"2.6","depth":1,"next":{"title":"Deep Property Mapping","level":"2.7","depth":1,"path":"documentation/deepmapping.adoc","ref":"documentation/deepmapping.adoc","articles":[]},"previous":{"title":"One-Way Mapping","level":"2.5","depth":1,"path":"documentation/oneway.adoc","ref":"documentation/oneway.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/copybyreference.adoc","mtime":"2018-04-02T14:50:59.368Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

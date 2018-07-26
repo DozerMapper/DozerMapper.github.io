@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -869,8 +882,8 @@ at the field level.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;caseA&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.context.ContextMapping<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.context.ContextMappingPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMapping<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field-exclude</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>loanNo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>loanNo<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -878,17 +891,17 @@ at the field level.</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;caseC&quot;</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>contextList<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>contextList<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.context.ContextMappingNestedPrime
+        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingNestedPrime
      <span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;caseB&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.context.ContextMapping<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.context.ContextMappingPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMapping<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;caseC&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.context.ContextMappingNested<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.context.ContextMappingNestedPrime
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingNested<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingNestedPrime
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field-exclude</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>loanNo<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -896,8 +909,8 @@ at the field level.</p>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field-exclude</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;caseD&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.context.ContextMappingNested<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.context.ContextMappingNestedPrime
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingNested<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.context.ContextMappingNestedPrime
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
 </div>
@@ -955,7 +968,7 @@ the map-id in your mapping call.</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Context Based Mapping","level":"2.4","depth":1,"next":{"title":"One-Way Mapping","level":"2.5","depth":1,"path":"documentation/oneway.adoc","ref":"documentation/oneway.adoc","articles":[]},"previous":{"title":"Inheritance Mapping","level":"2.3","depth":1,"path":"documentation/baseattributes.adoc","ref":"documentation/baseattributes.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/contextmapping.adoc","mtime":"2017-11-20T19:11:04.860Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Context Based Mapping","level":"2.4","depth":1,"next":{"title":"One-Way Mapping","level":"2.5","depth":1,"path":"documentation/oneway.adoc","ref":"documentation/oneway.adoc","articles":[]},"previous":{"title":"Inheritance Mapping","level":"2.3","depth":1,"path":"documentation/baseattributes.adoc","ref":"documentation/baseattributes.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/contextmapping.adoc","mtime":"2018-04-02T14:50:59.368Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

@@ -597,12 +597,25 @@
             
         </li>
     
-        <li class="chapter " data-level="6.2" data-path="xmlbeans.html">
+        <li class="chapter " data-level="6.2" data-path="springBootIntegration.html">
             
-                <a href="xmlbeans.html">
+                <a href="springBootIntegration.html">
             
                     
-                    JAXB and XMLBeans
+                    Spring Boot Integration
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="jaxb.html">
+            
+                <a href="jaxb.html">
+            
+                    
+                    JAXB
             
                 </a>
             
@@ -737,7 +750,7 @@
     
         <li class="chapter " data-level="9.3" >
             
-                <a target="_blank" href="https://dozermapper.github.io/schema/dozer-user-guide.pdf">
+                <a target="_blank" href="https://dozermapper.github.io/user-guide.pdf">
             
                     
                     User’s Guide PDF
@@ -871,13 +884,13 @@ destination map exists it will add elements to the existing map.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.MapToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.MapToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.map.MapToMapPrime<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>standardMapWithHint<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>standardMapWithHint<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">a-hint</span>&gt;</span>org.dozer.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">a-hint</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">a-hint</span>&gt;</span>com.github.dozermapper.core.vo.TestObject<span class="hljs-tag">&lt;/<span class="hljs-name">a-hint</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.TestObjectPrime<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span></code></pre>
 </div>
@@ -899,8 +912,8 @@ attribute.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hashMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -917,8 +930,8 @@ notice that Field A has a unique setter() method name.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myStringProperty&quot;</span>&gt;</span>hashMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -939,8 +952,8 @@ class.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>org.dozer.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>com.github.dozermapper.core.vo.map.MapToProperty<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty3<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myCustomProperty&quot;</span>&gt;</span>customMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
@@ -948,7 +961,7 @@ class.</p>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty4<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">b</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">key</span>=<span class="hljs-string">&quot;myCustomNullProperty&quot;</span>&gt;</span>nullCustomMap<span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>org.dozer.vo.map.CustomMap<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">b-hint</span>&gt;</span>com.github.dozermapper.core.vo.map.CustomMap<span class="hljs-tag">&lt;/<span class="hljs-name">b-hint</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span>&gt;</span>stringProperty5<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -981,7 +994,7 @@ put() methods.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-xml" data-lang="xml"><span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;myTestMapping&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span>&gt;</span>java.util.Map<span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -993,9 +1006,9 @@ put() methods.</p>
     <span class="hljs-tag">&lt;/<span class="hljs-name">field-exclude</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">mapping</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">mapping</span> <span class="hljs-attr">map-id</span>=<span class="hljs-string">&quot;myCustomTestMapping&quot;</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>org.dozer.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">class-a</span>&gt;</span>com.github.dozermapper.core.vo.map.PropertyToMap<span class="hljs-tag">&lt;/<span class="hljs-name">class-a</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">class-b</span> <span class="hljs-attr">map-set-method</span>=<span class="hljs-string">&quot;putValue&quot;</span> <span class="hljs-attr">map-get-method</span>=<span class="hljs-string">&quot;getValue&quot;</span>&gt;</span>
-      org.dozer.vo.map.CustomMap
+      com.github.dozermapper.core.vo.map.CustomMap
   <span class="hljs-tag">&lt;/<span class="hljs-name">class-b</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">field</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">set-method</span>=<span class="hljs-string">&quot;addStringProperty2&quot;</span>&gt;</span>stringProperty2<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
@@ -1017,8 +1030,8 @@ custom mapping.</p>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code class="language-prettyprint" data-lang="prettyprint">&lt;mapping&gt;
-    &lt;class-a&gt;org.dozer.vo.map.MapTestObject&lt;/class-a&gt;
-    &lt;class-b&gt;org.dozer.vo.map.MapTestObjectPrime&lt;/class-b&gt;
+    &lt;class-a&gt;com.github.dozermapper.core.vo.map.MapTestObject&lt;/class-a&gt;
+    &lt;class-b&gt;com.github.dozermapper.core.vo.map.MapTestObjectPrime&lt;/class-b&gt;
     &lt;field map-id=&quot;myTestMapping&quot;&gt;
         &lt;a&gt;propertyToMap&lt;/a&gt;
         &lt;b&gt;propertyToMapMap&lt;/b&gt;
@@ -1108,7 +1121,7 @@ assertEquals(<span class="hljs-string">&quot;stringPropertyValue&quot;</span>, p
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Map Backed Property Mapping","level":"3.4","depth":1,"next":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"previous":{"title":"Collections and Arrays","level":"3.3","depth":1,"path":"documentation/collectionandarraymapping.adoc","ref":"documentation/collectionandarraymapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/mapbackedproperty.adoc","mtime":"2017-11-20T19:11:04.866Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-04-01T16:20:14.130Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Map Backed Property Mapping","level":"3.4","depth":1,"next":{"title":"Proxy Objects","level":"3.5","depth":1,"path":"documentation/proxyhandling.adoc","ref":"documentation/proxyhandling.adoc","articles":[]},"previous":{"title":"Collections and Arrays","level":"3.3","depth":1,"path":"documentation/collectionandarraymapping.adoc","ref":"documentation/collectionandarraymapping.adoc","articles":[]},"dir":"ltr"},"config":{"gitbook":"3.2.2","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"documentation/mapbackedproperty.adoc","mtime":"2018-04-02T14:50:59.375Z","type":"asciidoc"},"gitbook":{"version":"3.2.2","time":"2018-07-26T18:46:12.227Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
