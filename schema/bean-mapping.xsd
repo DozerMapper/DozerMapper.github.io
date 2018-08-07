@@ -174,15 +174,15 @@
 
   <xs:simpleType name="field-type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="iterate"/>
       <xs:enumeration value="generic"/>
+      <xs:enumeration value="iterate"/>
     </xs:restriction>
   </xs:simpleType>
 
   <xs:simpleType name="type">
     <xs:restriction base="xs:string">
-      <xs:enumeration value="bi-directional"/>
       <xs:enumeration value="one-way"/>
+      <xs:enumeration value="bi-directional"/>
     </xs:restriction>
   </xs:simpleType>
 </xs:schema>
